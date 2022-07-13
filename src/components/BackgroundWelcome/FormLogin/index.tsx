@@ -1,16 +1,11 @@
 import React from "react";
 import { SectionForm } from './style';
-import InputForm from "./InputForm";
-import Titulo  from "./Title";
-import Paragrafo from "./ContentTitleForm";
+import FormContainer from "./FormContainer";
+
 
 
 const section: React.FC = () => 
     <SectionForm>
-        <Titulo />
-        <Paragrafo />
-        <InputForm />
-        <InputForm />      
-    </SectionForm>;
-
+       <FormContainer/>
+    </SectionForm>
 export default section;

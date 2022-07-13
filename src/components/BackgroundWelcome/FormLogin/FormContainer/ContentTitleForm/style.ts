@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Paragrafo = styled.p`
-    font-size: 1rem;
+    font-size: 16px;
     color: #E0E0E0;
-    text-align: center;
-    width: 20vw;
-    margin-bottom: 12vh;
+    font-weight: 400;
+    margin-bottom: 10vh;
+    align-self: start;
 `;
