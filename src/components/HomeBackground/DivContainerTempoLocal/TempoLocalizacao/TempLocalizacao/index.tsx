@@ -1,5 +1,5 @@
 import React from "react";
-import { TempLocalizacao } from "../TempLocalizacao/style";
+import { TempLocalizacao } from "./style";
 import  Temperatura  from "./Temperatura";
 import Localizacao  from "./Localizacao";
 

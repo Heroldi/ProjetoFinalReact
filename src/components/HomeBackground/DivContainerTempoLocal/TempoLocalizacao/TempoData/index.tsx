@@ -1,11 +1,11 @@
 import React from "react";
-import { TempoData } from "../TempoData/style";
+import { TempoData } from "./style";
 import Data  from "./Date";
 import Tempo from "./Tempo";
 
 const tempoData: React.FC = () => 
 <TempoData>
-    <Data/>
     <Tempo/>
+    <Data/>
 </TempoData>;
 export default tempoData;

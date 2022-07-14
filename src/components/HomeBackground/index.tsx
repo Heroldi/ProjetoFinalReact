@@ -2,13 +2,18 @@ import React from "react";
 import { HomeBackground } from './style'
 import  BolaCompasso  from "./BolaCompasso";
 import  LogoCompassoPreto  from "./LogoCompassoPreto";
-import TempLocalizacao from "./TempLocalizacao";
+import DivContainerTempoLocal from "./DivContainerTempoLocal";
+import Retangulo from "./Retangulo";
 
 const welcome: React.FC = () => 
+<>
 <HomeBackground>
-    <TempLocalizacao />
     <BolaCompasso/>
     <LogoCompassoPreto />
-</HomeBackground>;
+    <DivContainerTempoLocal/>
+    <Retangulo/>
+</HomeBackground>
+
+</>
 
 export default welcome;

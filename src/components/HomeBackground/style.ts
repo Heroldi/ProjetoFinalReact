@@ -5,8 +5,7 @@ export const HomeBackground = styled.section`
     height: 100vh;
     width: 100vw;
     background: white;
+    flex-direction: column;
+    justify-content: space-between;
     position:relative;
-    flex-direction: row;
-    justify-content: center;
-    align-items: start;
 `;
