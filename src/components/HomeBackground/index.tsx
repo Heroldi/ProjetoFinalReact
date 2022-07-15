@@ -4,6 +4,7 @@ import  BolaCompasso  from "./BolaCompasso";
 import  LogoCompassoPreto  from "./LogoCompassoPreto";
 import DivContainerTempoLocal from "./DivContainerTempoLocal";
 import Retangulo from "./Retangulo";
+import  TextoCentral  from "./TextoCentral";
 
 const welcome: React.FC = () => 
 <>
@@ -11,6 +12,7 @@ const welcome: React.FC = () =>
     <BolaCompasso/>
     <LogoCompassoPreto />
     <DivContainerTempoLocal/>
+    <TextoCentral/>
     <Retangulo/>
 </HomeBackground>
 

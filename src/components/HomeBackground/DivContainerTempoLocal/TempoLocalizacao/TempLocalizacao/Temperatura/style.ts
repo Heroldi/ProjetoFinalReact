@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Temperatura= styled.h1`
-    font-size: 48px;
+    font-size: 2rem;
     color: black;
     font-weight: 700;
 `;

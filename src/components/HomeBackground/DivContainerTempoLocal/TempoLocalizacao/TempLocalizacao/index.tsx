@@ -5,7 +5,7 @@ import Localizacao  from "./Localizacao";
 
 const tempLocalizacao: React.FC = () => 
 <TempLocalizacao>
-    <Temperatura />
     <Localizacao />
+    <Temperatura />
 </TempLocalizacao>;
 export default tempLocalizacao;

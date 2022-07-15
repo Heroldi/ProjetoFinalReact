@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Tempo= styled.h1`
     height: 144px;
     text-align: center;
-    font-size: 144px;
+    font-size: 6rem;
     color: black;
     font-weight: 700;
-    margin-top: -10px;
+    margin-bottom: -30px;
 `;
