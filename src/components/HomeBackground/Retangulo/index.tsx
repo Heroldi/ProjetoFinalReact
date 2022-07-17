@@ -17,7 +17,14 @@ const RetanguloGrad: React.FC = () => {
 
     const [tempo, setTempo] = useState<number>();
 
-    function regresiva (contador: number = 10){
+    function logout(){
+        window.location.href = ("/home");
+    }
+    function novaGuia(){
+        window.open("http://www.google.com/");
+    }
+
+    function regresiva (contador: number = 60){
         setTimeout(() => {
             if(contador > 0){
                 setTempo(contador - 1) ;
@@ -46,10 +53,10 @@ const RetanguloGrad: React.FC = () => {
     
     <DivNavegLogout>
         <DivNavegacao>
-            <p>Continuar Navegando</p>
+            <p onClick={novaGuia}>Continuar Navegando</p>
         </DivNavegacao>
         <TextLogout>
-            <p>Logout</p>
+            <p onClick={logout}>Logout</p>
         </TextLogout>
     </DivNavegLogout>
     

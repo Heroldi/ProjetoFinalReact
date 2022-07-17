@@ -1,6 +1,14 @@
 import React from "react";
 import { Temperatura } from "./style";
 
-const tempoData: React.FC = () => 
-<Temperatura>22°</Temperatura>;
+interface propsTemperatura {
+    children?: React.ReactNode;
+}
+
+const tempoData: React.FC<propsTemperatura> = ({children}) => {
+    return(
+            <Temperatura>{children}</Temperatura>
+    )
+}
+
 export default tempoData;

@@ -1,6 +1,14 @@
-import React from "react";
+import React, { Children } from "react";
 import { Localizacao } from "./style";
 
-const tempoData: React.FC = () => 
-<Localizacao>Passo Fundo - RS</Localizacao>;
+interface propsLocalizacao {
+    children?: React.ReactNode
+}
+const tempoData: React.FC<propsLocalizacao> = ({children}) => {
+    return (
+        <>    
+            <Localizacao>{children}</Localizacao>
+        </>
+    )
+}
 export default tempoData;

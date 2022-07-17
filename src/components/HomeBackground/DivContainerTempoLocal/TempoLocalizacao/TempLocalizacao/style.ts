@@ -6,4 +6,11 @@ flex-direction: column;
 align-items: center;
 margin-right: 10px;
 margin-top: 10px
+position: relative;
+img{
+    position: absolute;
+    right: 57px;
+    top: 17px;
+    width:2%;
+}
 `;

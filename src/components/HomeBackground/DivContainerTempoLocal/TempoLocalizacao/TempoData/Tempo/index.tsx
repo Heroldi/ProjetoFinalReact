@@ -1,6 +1,14 @@
 import React from "react";
 import { Tempo } from "./style";
 
-const tempoData: React.FC = () => 
-<Tempo>11:26</Tempo>;
+interface propsTempo {
+    children?: React.ReactNode;
+}
+
+
+const tempoData: React.FC<propsTempo> = ({children}) => {
+    return(
+            <Tempo>{children}</Tempo>
+    )
+}
 export default tempoData;

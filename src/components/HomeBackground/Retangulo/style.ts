@@ -56,6 +56,7 @@ export const DivTimer = styled.div`
         color: white;
         font-size: 0.5rem;
         text-align:center;
+        margin-top: 5px;
     }
 `;
 export const DivNavegLogout = styled.div`
@@ -76,6 +77,10 @@ export const DivNavegacao = styled.div`
         margin-bottom: -10px;
         text-align:center;
         color: #C13216;
+        cursor: pointer;
+        :hover {
+            color: black;
+          }
     }
 `;
 
@@ -89,6 +94,10 @@ export const TextLogout = styled.div`
         color: white;
         text-align: center;
         align-self: center;
+        cursor: pointer;
+        :hover {
+            color: #C12D18;
+          }
     }
 `;
 
