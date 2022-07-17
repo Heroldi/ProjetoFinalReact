@@ -51,13 +51,6 @@ export const DivTimer = styled.div`
     flex-direction: column;
     justify-content: center;
     margin-left: 10px;
-    h2 {
-        font-weight: 400;
-        color: white;
-        font-size: 1.7rem;
-        margin-bottom: -10px;
-        text-align:center
-    }
     h3 {
         font-weight: 400;
         color: white;

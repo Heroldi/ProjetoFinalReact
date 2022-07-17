@@ -17,3 +17,23 @@ padding: 20px;
     font-size: 16px
   }
 `;
+
+export const Button = styled.input `
+background: #FF2D04;
+height: 67px;
+width: 379px;
+margin-top: 7vh;
+border-radius: 50px;
+border: none;
+font-weight: 700;
+color: #FFFFFF;
+font-size: 18px;
+`;
+
+export const ErroLogin = styled.p `
+display: none;
+color: #E9B425;
+font-weight: 700;
+font-size: 1rem;
+text-align: center;
+`;
