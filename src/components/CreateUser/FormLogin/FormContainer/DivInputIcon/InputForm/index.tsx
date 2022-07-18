@@ -6,6 +6,8 @@ import { ErroLogin } from './style'
 interface inputProps {
 };
 
+var cor = "color: black";
+
 const Input: React.FC<inputProps> = () => {
 
   const [validate, setValidade] = useState(false);
@@ -66,9 +68,9 @@ const Input: React.FC<inputProps> = () => {
     return(
         <>
             <form  onSubmit={handleSubmit}>
-                <InputForm type="text" placeholder="Usuário" name="email" onChange={handleChange}></InputForm>
+                <InputForm  type="text" placeholder="Usuário" name="email" onChange={handleChange}></InputForm>
                 <InputForm type="text" placeholder="Senha" name="senha" onChange={handleChange}></InputForm>
-                {validate && <ErroLogin>Os campos não atendem aos requisitos</ErroLogin>}
+                {validate && <ErroLogin>Ops, os campos não atendem aos requisitos</ErroLogin>}
                 <Button type="submit" value="Cadastrar"></Button>
             </form>
         </>

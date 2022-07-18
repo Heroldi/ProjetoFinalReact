@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const Img = styled.section`
-height: 69px;
-width: 306px;
+height: 3rem;
+width: 14rem;
 position: absolute;
 top: 35px;
-left: 50%;
+left: 54%;
 transform: translateX(-50%);
 img {
     width: 100%;
