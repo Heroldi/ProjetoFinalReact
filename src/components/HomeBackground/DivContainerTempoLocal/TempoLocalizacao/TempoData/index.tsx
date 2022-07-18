@@ -8,29 +8,22 @@ const TempoDataFC: React.FC = () => {
     const [data, setData] = useState("");
 
 
-    function pegaCordenada (position: any){
-        const longitude : any = position.coords.longitude;
-        const latitude : any = position.coords.latitude;      
-
-        async function localiza() {
-            const request = await fetch(`https://api.hgbrasil.com/weather?format=json-cors&lat=${latitude}&lon=${longitude}&key=6fca96ac`, {
-                mode: 'cors',
-                method: 'GET',
-                headers: { 'Content-Type': 'Application/Json' ,
-            }        
-            })
-            var dados = await request.json()   
-            setTempo(dados.results.time);    
-        }
-        localiza();
-    } 
-    
-    
-
-
-
     function DataAtual(){
         let dataDado = new Date();
+      
+        let hora = dataDado.getHours();
+        let horaString;
+        if(hora >= 0 && hora <= 9){
+            hora = (0 + hora);
+        }
+        horaString = String(hora);
+          
+        let minutos = dataDado.getMinutes();
+        let minutosString;
+        if(minutos >= 0 && minutos <= 9){
+            minutos = (0 + minutos);
+        }
+         minutosString = String(minutos);
 
         let diaSemana = dataDado.getDay();
         let diaSemanaString;
@@ -107,17 +100,14 @@ const TempoDataFC: React.FC = () => {
                 break;
         }
         setData(diaSemanaString+ ", " + diaString +" "+ mesString +" "+ anoString);
-        // 
-        
+        setTempo(horaString + ":" +minutosString);    
+      
     }
     
     useEffect(()=> {
-        DataAtual(); 
+        DataAtual();
+        setInterval(DataAtual, 30000);
     },[])
-
-
-    navigator.geolocation.getCurrentPosition(pegaCordenada);
-
 
     return (
         <>

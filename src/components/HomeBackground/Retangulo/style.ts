@@ -32,7 +32,7 @@ export const Text = styled.p`
 export const DivText2Timer = styled.div`
     display: flex;
     height: 4rem;
-    width: 33vw;
+    width: 15vw;
     justify-content: start;
     margin-left: 50px;
 `;
@@ -40,7 +40,7 @@ export const DivText2Timer = styled.div`
 export const Text2 = styled.p`
     font-size: 0.6rem;
     color: #FFFFFF;
-    margin-top: 30px;
+    margin-top: 20px;
     width: 8vw;
     text-align: center;
 `;

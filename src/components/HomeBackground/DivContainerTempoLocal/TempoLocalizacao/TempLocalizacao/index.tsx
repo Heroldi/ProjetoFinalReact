@@ -8,6 +8,7 @@ import  imagem  from '../../../../../assets/img/cloud.svg';
 const TempLocalizacaoFC: React.FC = () =>  {
     const [cidade, setCidade] = useState("");
     const [temperatura, setTemperatura] = useState("");
+
     function pegaCordenada (position: any){
         const longitude : any = position.coords.longitude;
         const latitude : any = position.coords.latitude;      
@@ -25,7 +26,7 @@ const TempLocalizacaoFC: React.FC = () =>  {
         }
         localiza();
     }   
-    navigator.geolocation.getCurrentPosition(pegaCordenada);
+    // navigator.geolocation.getCurrentPosition(pegaCordenada);
         
         
     return (

@@ -1,6 +1,7 @@
 {
   "name": "projeto_final",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -17,13 +18,19 @@
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
     "typescript": "^4.7.4",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.0",
+    "nodemon": "^2.0.18"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "dev": "nodemon API/server.js",
     "eject": "react-scripts eject"
+    
   },
   "eslintConfig": {
     "extends": [

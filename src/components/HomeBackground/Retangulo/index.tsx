@@ -44,7 +44,7 @@ const RetanguloGrad: React.FC = () => {
         <img src={imagem}></img>
     </DivTextLine>
     <DivText2Timer>
-        <Text2>Application refresh in</Text2>
+        <Text2>Application <br/> refresh in</Text2>
         <DivTimer>
             <Relogio tempo={tempo}></Relogio>
             <h3>seconds</h3>

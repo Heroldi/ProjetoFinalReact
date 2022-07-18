@@ -17,36 +17,6 @@ color: #E0E0E0;
   }
 `;
 
-
-export const CadastroLogin = styled.p `
-color: white;
-font-weight: 700;
-font-size: 1.2rem;
-text-align: center;
-margin-top: 1vh;
-`;
-
-export const CadastreSe = styled.a `
-color: #C12D18;
-font-weight: 700;
-font-size: 1.2rem;
-text-align: center;
-margin-top: 1vh;
-margin-left: 5px;
-:hover{
-  cursor: pointer;
-  text-decoration: underline;
-}
-`;
-
-export const ErroLogin = styled.p `
-color: #E9B425;
-font-weight: 700;
-font-size: 1rem;
-text-align: center;
-margin-top: 3vh;
-`;
-
 export const Button = styled.input `
 background: #FF2D04;
 height: 67px;
@@ -57,4 +27,13 @@ border: none;
 font-weight: 700;
 color: #FFFFFF;
 font-size: 18px;
+`;
+
+export const ErroLogin = styled.p `
+display: content;
+color: #E9B425;
+font-weight: 700;
+font-size: 1rem;
+text-align: center;
+margin-top: 3vh;
 `;
