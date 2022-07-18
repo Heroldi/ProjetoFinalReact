@@ -13,7 +13,7 @@ const TempLocalizacaoFC: React.FC = () =>  {
         const latitude : any = position.coords.latitude;      
 
         async function localiza() {
-            const request = await fetch(`https://api.hgbrasil.com/weather?format=json-cors&lat=${latitude}&lon=${longitude}&key=b4613b35`, {
+            const request = await fetch(`https://api.hgbrasil.com/weather?format=json-cors&lat=${latitude}&lon=${longitude}&key=6fca96ac`, {
                 mode: 'cors',
                 method: 'GET',
                 headers: { 'Content-Type': 'Application/Json' ,
