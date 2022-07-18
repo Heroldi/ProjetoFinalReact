@@ -1,18 +1,19 @@
 import React, {useState} from "react";
 import { Button } from "./style";
 import { InputForm } from './style';
-import { ErroLogin } from './style'
+import { ErroLogin } from './style';
+import ImgUser from "./IconUser";
+import ImgSenha from "./IconPassword";
 
 interface inputProps {
 };
 
-var cor = "color: black";
 
 const Input: React.FC<inputProps> = () => {
 
-  const [validate, setValidade] = useState(false);
-
-    const [user, setUser] = useState({
+  const [erroLogin, setErroLogin] = useState(false);
+  const [styleInput, setStyleInput] = useState(false);
+  const [user, setUser] = useState({
         email: '',
         senha: ''
       })
@@ -51,11 +52,14 @@ const Input: React.FC<inputProps> = () => {
         let senhaFiltro = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
      
         if(user.senha === '' || user.email === ''){ 
-          setValidade(true);
+          setErroLogin(true);
+          setStyleInput(true);
         }else if (!emailFiltro.test(user.email)) {
-          setValidade(true);
+          setErroLogin(true);
+          setStyleInput(true);
         }else if(!senhaFiltro.test(user.senha)){
-          setValidade(true);
+          setErroLogin(true);
+          setStyleInput(true);
           console.log(user.senha);
         }else{
           SalvarBanco()
@@ -68,9 +72,11 @@ const Input: React.FC<inputProps> = () => {
     return(
         <>
             <form  onSubmit={handleSubmit}>
-                <InputForm  type="text" placeholder="Usuário" name="email" onChange={handleChange}></InputForm>
-                <InputForm type="text" placeholder="Senha" name="senha" onChange={handleChange}></InputForm>
-                {validate && <ErroLogin>Ops, os campos não atendem aos requisitos</ErroLogin>}
+                <InputForm style={{borderColor: styleInput ? '#E9B425': '#FFFFFF' }} type="text" placeholder="Usuário" name="email" onChange={handleChange}/>
+                <InputForm style={{borderColor: styleInput ? '#E9B425': '#FFFFFF' }}type="text" placeholder="Senha" name="senha" onChange={handleChange}/>
+                <ImgUser/>
+                <ImgSenha/>
+                {erroLogin && <ErroLogin>Ops, os campos não atendem aos requisitos</ErroLogin>}
                 <Button type="submit" value="Cadastrar"></Button>
             </form>
         </>

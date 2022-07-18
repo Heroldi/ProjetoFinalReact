@@ -4,12 +4,15 @@ import { InputForm } from './style';
 import { ErroLogin } from './style'
 import { CadastroLogin } from './style';
 import { CadastreSe } from './style'
+import IconUser  from "./IconUser";
+import IconPassword from "./IconPassword";
 
 interface inputProps {
 };
 
 const Input: React.FC<inputProps> = () => {
-    const [validate, setValidade] = useState(false);
+    const [erroLogin, setErroLogin] = useState(false);
+    const [styleInput, setStyleInput] = useState(false);
     const [user, setUser] = useState({
         email: '',
         senha: ''
@@ -38,13 +41,15 @@ const Input: React.FC<inputProps> = () => {
         const content = await rawResponse.json();
 
         if(user.email === '' || user.senha === ''){
-          setValidade(true);
+          setErroLogin(true);
+          setStyleInput(true);
         }else{
           content.forEach((element: any) => {
             if(element.email === user.email && element.senha === user.senha){
                 window.location.href = "http://localhost:3000/navegacao";
             }else{
-                setValidade(true);
+              setErroLogin(true);
+              setStyleInput(true);
             }
           });
       }
@@ -59,10 +64,12 @@ const Input: React.FC<inputProps> = () => {
     return(
         <>
             <form  onSubmit={handleSubmit}>
-                <InputForm type="text" placeholder="email" name="email" onChange={handleChange}></InputForm>
-                <InputForm type="text" placeholder="Senha" name="senha" onChange={handleChange}></InputForm>
+                <InputForm style={{borderColor: styleInput ? '#E9B425': '#FFFFFF' }} type="text" placeholder="Email" name="email" onChange={handleChange} />
+                <InputForm style={{borderColor: styleInput ? '#E9B425': '#FFFFFF' }} type="text" placeholder="Senha" name="senha" onChange={handleChange} />
+                <IconUser/>
+                <IconPassword/>
                 <CadastroLogin> Não possui conta?<CadastreSe href="http://localhost:3000/cadastro">Cadastre-se</CadastreSe></CadastroLogin>
-                {validate && <ErroLogin>Ops, usuário ou senha inválidos. Tente novamente!</ErroLogin>}
+                {erroLogin && <ErroLogin>Ops, usuário ou senha inválidos. Tente novamente!</ErroLogin>}
                 <Button type="submit" value="Continuar"></Button>
             </form>
         </>
