@@ -14,16 +14,19 @@ const TempoDataFC: React.FC = () => {
         let hora = dataDado.getHours();
         let horaString;
         if(hora >= 0 && hora <= 9){
-            hora = (0 + hora);
+            horaString = `0${hora}`;
+        }else{
+            horaString = hora;
         }
-        horaString = String(hora);
           
         let minutos = dataDado.getMinutes();
         let minutosString;
+
         if(minutos >= 0 && minutos <= 9){
-            minutos = (0 + minutos);
+            minutosString = `0${minutos}`;
+        }else{
+            minutosString = minutos;
         }
-         minutosString = String(minutos);
 
         let diaSemana = dataDado.getDay();
         let diaSemanaString;

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { Button } from "./style";
 import { InputForm } from './style';
 import { ErroLogin } from './style'
@@ -7,30 +7,22 @@ import { CadastreSe } from './style'
 import IconUser  from "./IconUser";
 import IconPassword from "./IconPassword";
 
-interface inputProps {
-};
 
-const Input: React.FC<inputProps> = () => {
+const Input: React.FC = () => {
     const [erroLogin, setErroLogin] = useState(false);
     const [styleInput, setStyleInput] = useState(false);
-    const [user, setUser] = useState({
-        email: '',
-        senha: ''
-      })
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+
 
       const handleChange = (event: any) => {
-        let value = event.target.value;
-        let name = event.target.name;
-      
-        setUser((prevalue) => {
-          return {
-            ...prevalue,   // Spread Operator               
-            [name]: value
-          }
-        })
+
+        setStyleInput(false);
+        setErroLogin(false);
       }
 
-      async function BuscaeValida(){
+
+      async function BuscaeBanco(){
         const rawResponse = await fetch("http://localhost:8080/api/v1/users", {
           method: "GET",
           headers: {
@@ -40,34 +32,68 @@ const Input: React.FC<inputProps> = () => {
         });
         const content = await rawResponse.json();
 
-        if(user.email === '' || user.senha === ''){
+        if(email === '' || senha === ''){
           setErroLogin(true);
           setStyleInput(true);
-        }else{
+        }else if(email != '' && senha != ''){
           content.forEach((element: any) => {
-            if(element.email === user.email && element.senha === user.senha){
-                window.location.href = "http://localhost:3000/navegacao";
+            if(element.email === email && element.senha === senha){
+              window.location.href = "http://localhost:3000/navegacao";
             }else{
               setErroLogin(true);
               setStyleInput(true);
-            }
+            }          
           });
       }
         
       };
 
+  
+
       const handleSubmit = (event: any) => {
         event.preventDefault(); 
-        BuscaeValida();                        
+        BuscaeBanco();                      
       }
+      
+
+      function mudaIconSenha(){
+          return senha ? true : false
+      }
+
+      function mudaIconEmail(){
+        return email ? true : false
+      }
+
+    function subirIcon(){
+      return erroLogin ? true : false
+      }
+
+
+      useEffect( () =>{
+        mudaIconSenha();
+      },[senha])
+
+      useEffect( () =>{
+        mudaIconEmail();
+      },[email])
+
+      useEffect( () =>{
+        subirIcon();
+      },[erroLogin])
+
+      function OnChange(event: any){
+        setEmail(event.target.value);
+        handleChange(event);
+     }
+        
       
     return(
         <>
             <form  onSubmit={handleSubmit}>
-                <InputForm style={{borderColor: styleInput ? '#E9B425': '#FFFFFF' }} type="text" placeholder="Email" name="email" onChange={handleChange} />
-                <InputForm style={{borderColor: styleInput ? '#E9B425': '#FFFFFF' }} type="text" placeholder="Senha" name="senha" onChange={handleChange} />
-                <IconUser/>
-                <IconPassword/>
+                <InputForm style={{border: styleInput ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Email" name="email" value={email} onChange={OnChange} />
+                <IconUser styleEmail={mudaIconEmail()}/>
+                <InputForm style={{border: styleInput ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Senha" name="senha" value={senha} onChange={event => setSenha(event.target.value)} />
+                <IconPassword styleSenha={mudaIconSenha()} styleAltura={subirIcon()}/>           
                 <CadastroLogin> Não possui conta?<CadastreSe href="http://localhost:3000/cadastro">Cadastre-se</CadastreSe></CadastroLogin>
                 {erroLogin && <ErroLogin>Ops, usuário ou senha inválidos. Tente novamente!</ErroLogin>}
                 <Button type="submit" value="Continuar"></Button>

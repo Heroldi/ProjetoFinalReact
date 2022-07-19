@@ -7,6 +7,7 @@ export default function AppRouter()  {
   return (
     <Router>
     <Routes>
+    <Route path='/' element={<Inicio />} />
       <Route path='/home' element={<Inicio />} />
       <Route path='/navegacao' element={<Navigation />} />
       <Route path='/cadastro' element={<Cadastro />} />
