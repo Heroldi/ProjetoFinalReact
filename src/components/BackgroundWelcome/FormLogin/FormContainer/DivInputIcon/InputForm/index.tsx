@@ -8,7 +8,7 @@ import IconUser  from "./IconUser";
 import IconPassword from "./IconPassword";
 
 
-const Input: React.FC = () => {
+const Input: React.FC= () => {
     const [erroLogin, setErroLogin] = useState(false);
     const [styleInput, setStyleInput] = useState(false);
     const [email, setEmail] = useState("");
@@ -89,10 +89,10 @@ const Input: React.FC = () => {
       
     return(
         <>
-            <form  onSubmit={handleSubmit}>
-                <InputForm style={{border: styleInput ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Email" name="email" value={email} onChange={OnChange} />
+            <form onSubmit={handleSubmit}> 
+                <InputForm autoComplete="off" style={{border: styleInput ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Email" name="email" value={email} onChange={OnChange} />
                 <IconUser styleEmail={mudaIconEmail()}/>
-                <InputForm style={{border: styleInput ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Senha" name="senha" value={senha} onChange={event => setSenha(event.target.value)} />
+                <InputForm autoComplete="off" style={{border: styleInput ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Senha" name="senha" value={senha} onChange={event => setSenha(event.target.value)} />
                 <IconPassword styleSenha={mudaIconSenha()} styleAltura={subirIcon()}/>           
                 <CadastroLogin> Não possui conta?<CadastreSe href="http://localhost:3000/cadastro">Cadastre-se</CadastreSe></CadastroLogin>
                 {erroLogin && <ErroLogin>Ops, usuário ou senha inválidos. Tente novamente!</ErroLogin>}

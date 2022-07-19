@@ -93,9 +93,9 @@ const Input: React.FC = () => {
     return(
         <>
             <form  onSubmit={handleSubmit}>
-                <InputForm style={{border: styleInput ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Email" name="email" value={email} onChange={OnChange} />
+                <InputForm autoComplete="off" style={{border: styleInput ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Email" name="email" value={email} onChange={OnChange} />
                 <ImgUser styleEmail={mudaIconEmail()}/>
-                <InputForm style={{border: styleInput ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Senha" name="senha" value={senha} onChange={event => setSenha(event.target.value)} />
+                <InputForm autoComplete="off" style={{border: styleInput ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Senha" name="senha" value={senha} onChange={event => setSenha(event.target.value)} />
                 <ImgSenha styleSenha={mudaIconSenha()} styleAltura={subirIcon()}/>  
                 {erroLogin && <ErroLogin>Ops, os campos não atendem aos requisitos</ErroLogin>}
                 <Button type="submit" value="Cadastrar"></Button>
