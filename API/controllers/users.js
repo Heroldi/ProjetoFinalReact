@@ -1,6 +1,8 @@
 import userModel from'../models/users.js';
 import bcrypt from'bcrypt';	
-import jwt from'jsonwebtoken';				
+import jwt from'jsonwebtoken';	
+import express from 'express';
+const app = express();
 
 export default {
 	user: function(req, res, next) {
@@ -16,15 +18,6 @@ export default {
 			
 		  });
 
-
-	// 	let user = new userModel(req.body);
-	// 	user.save(function (err, result) {
-	// 			  if (err) 
-	// 			  	next(err);
-	// 			  else
-	// 			  	res.json({status: "Sucesso", message: "Usuário adicionado com sucesso", data: null});
-				  
-	// 			});
 	},
 
 	listarUsers:  function(req, res, next) {
@@ -36,11 +29,31 @@ export default {
 			}
 		})
 	  },
+	  
+
+		verificaToken: function(req, res, next){
+			let token = req.body.token;
+			const secretKey = req.app.get('secretKey');
+
+			if(!secretKey){
+				res.status(401).json({erro: "Secret key vazia"});
+			}
+			try{
+				if(token){
+					jwt.verify(token, secretKey)
+					? res.json({status: true})
+					: res.json({status: false})
+				}
+
+			}catch(err){
+				res.status(500).json({erro: err});
+			}
+		},
 
 	authenticate: function(req, res, next) {
 		userModel.findOne({email:req.body.email}, function(err, userInfo){
 					if (err) {
-						next(err);
+						// next(err);
 					} else {
 
 						if(userInfo != null && bcrypt.compareSync(req.body.senha, userInfo.senha)) {
@@ -50,7 +63,6 @@ export default {
 						 res.status(200).json({menssagem:"Sucesso", message: "Usuário encontrado", data:{user: userInfo, token:token}});	
 						}else{
 							res.status(500).json({menssagem:"erro", message: "Email ou senha inválido", data:null});
-
 						}
 					}
 				});

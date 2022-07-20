@@ -12,32 +12,59 @@ import ImgSenha from "./IconPassword";
 
 const Input: React.FC = () => {
 
-  const [erroLogin, setErroLogin] = useState(false);
-  const [styleInput, setStyleInput] = useState(false);
+  const [erroEmail, setErroEmail] = useState(false);
+  const [erroSenha, setErroSenha] = useState(false);
+  const [styleInputEmail, setStyleInputEmail] = useState(false);
+  const [styleInputSenha, setStyleInputSenha] = useState(false);
+  const [erroSubirIcons, setErroSubirIcons] = useState(false);
+  const [typeSenha, setTypeSenha] = useState(false);
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const handleChange = (event: any) => {
-
-    setStyleInput(false);
-    setErroLogin(false);
+  const handleChangeEmail = () => {
+    setStyleInputEmail(false);
+    setErroEmail(false);
   }
+
+  const handleChangeSenha = () => {
+    setStyleInputSenha(false);
+    setErroSenha(false);
+  }
+
 
       async function SalvarBanco(){
 
         let emailFiltro = /^.+@.+\..{2,}$/;
         let senhaFiltro = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-     
-        if(senha === '' || email === ''){ 
-          setErroLogin(true);
-          setStyleInput(true);
-        }else if (!emailFiltro.test(email)) {
-          setErroLogin(true);
-          setStyleInput(true);
+
+        if(email ==='' && senha === ''){
+          setErroEmail(true);
+          setStyleInputEmail(true);
+          setErroSenha(true);
+          setStyleInputSenha(true);
+          setErroSubirIcons(true);  
+        }else if(email === ''){ 
+          setErroEmail(true);
+          setStyleInputEmail(true);
+          setErroSubirIcons(true);  
+        }else if(senha === ''){
+          setErroSenha(true);
+          setStyleInputSenha(true);
+          setErroSubirIcons(true);  
+        }else if (!emailFiltro.test(email) && !senhaFiltro.test(senha)) {
+          setErroEmail(true);
+          setStyleInputEmail(true);
+          setErroSenha(true);
+          setStyleInputSenha(true);
+          setErroSubirIcons(true);  
+        }else if(!emailFiltro.test(email)){
+          setErroEmail(true);
+          setStyleInputEmail(true);
+          setErroSubirIcons(true);  
         }else if(!senhaFiltro.test(senha)){
-          setErroLogin(true);
-          setStyleInput(true);
-          console.log(senha);
+          setErroSenha(true);
+          setStyleInputSenha(true);
+          setErroSubirIcons(true);  
         }else{     
         
 
@@ -66,15 +93,15 @@ const Input: React.FC = () => {
 
       function mudaIconSenha(){
         return senha ? true : false
-    }
-    function mudaIconEmail(){
+      }
+      
+      function mudaIconEmail(){
       return email ? true : false
-  }
+      }
 
   function subirIcon(){
-    return erroLogin ? true : false
+    return erroSubirIcons ? true : false;
   }
-
 
     useEffect( () =>{
       mudaIconSenha();
@@ -86,25 +113,24 @@ const Input: React.FC = () => {
 
     useEffect( () =>{
       subirIcon();
-    },[erroLogin])
+    },[erroSubirIcons, styleInputEmail, styleInputSenha])
 
     function OnChange(event: any){
       setEmail(event.target.value);
-      handleChange(event);
    }
       
-    
 
       
     return(
         <>
             <form  onSubmit={handleSubmit}>
-                <InputForm autoComplete="off" style={{border: styleInput ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Email" name="email" value={email} onChange={OnChange} />
+                <InputForm autoComplete="off" style={{border: styleInputEmail ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Email" name="email" value={email} onChange={OnChange} onFocus={handleChangeEmail}/>
                 <ImgUser styleEmail={mudaIconEmail()}/>
-                <InputForm autoComplete="off" style={{border: styleInput ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="password" placeholder="Senha" name="senha" value={senha} onChange={event => setSenha(event.target.value)} />
+                <InputForm autoComplete="off" style={{border: styleInputSenha ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Senha" name="senha" value={senha} onChange={event => setSenha(event.target.value)}  onFocus={handleChangeSenha}/>
                 <ImgSenha styleSenha={mudaIconSenha()} styleAltura={subirIcon()}/>  
                 <CadastroLogin> Já possui uma conta?<LogarSe href="http://localhost:3000/login">Logar-se</LogarSe></CadastroLogin>
-                {erroLogin && <ErroLogin>Ops, os campos não atendem aos requisitos</ErroLogin>}
+                {erroEmail && <ErroLogin>Ops, o campo email não atende aos requisitos</ErroLogin>}
+                {erroSenha && <ErroLogin>Ops, o campo senha não atende aos requisitos</ErroLogin>}
                 <Button type="submit" value="Cadastrar"></Button>
             </form>
         </>

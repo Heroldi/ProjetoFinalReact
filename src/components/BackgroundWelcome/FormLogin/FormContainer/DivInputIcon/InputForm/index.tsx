@@ -16,19 +16,24 @@ const Input: React.FC= () => {
 
 
       const handleChange = (event: any) => {
-
         setStyleInput(false);
         setErroLogin(false);
       }
 
-
       async function BuscaBanco(){
+        let emailFiltro = /^.+@.+\..{2,}$/;
+        let senhaFiltro = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
         if(email === '' || senha === ''){
           setErroLogin(true);
           setStyleInput(true); 
+        }else if (!emailFiltro.test(email)) {
+          setErroLogin(true);
+          setStyleInput(true);
+        }else if(!senhaFiltro.test(senha)){
+          setErroLogin(true);
+          setStyleInput(true);
         }else{
-
           const rawResponse = await fetch("http://localhost:8080/users/login", {
           method: "POST",
           headers: {
@@ -38,13 +43,10 @@ const Input: React.FC= () => {
           body: JSON.stringify({
             email: email,
             senha: senha
-
           }),
+          });
 
-        });
-
-        const content = await rawResponse.json();
-        
+        const content = await rawResponse.json();      
 
         if(rawResponse.status != 200){
           setErroLogin(true);
@@ -54,7 +56,6 @@ const Input: React.FC= () => {
           localStorage.setItem("Token", token);
           window.location.href = "/home";
         }
-        
       };
       }
 

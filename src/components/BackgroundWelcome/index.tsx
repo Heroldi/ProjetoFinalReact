@@ -4,10 +4,31 @@ import Form from '../BackgroundWelcome/FormLogin';
 import ImagemFundo from './ImageLogin';
 
 const welcome: React.FC = () => {
-    let token = localStorage.getItem('Token');
-        if(token){
+
+    async function validaToken(){
+        let token = localStorage.getItem('Token');
+
+        const rawResponse = await fetch("http://localhost:8080/users/verifica", {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            token: token
+          }),
+
+        });
+
+        const content = await rawResponse.json();
+
+        if(content.status === true){
             window.location.href = ("/home");
         }
+    }
+
+    validaToken();
+    
    return(
     <SectionWelcome>
         <Form /> 
