@@ -63,13 +63,13 @@ const TempLocalizacaoFC: React.FC = () =>  {
     useEffect(()=> {  
         console.log(permissao);
         if(permissao === "granted"){ 
-            localizaComCordenada();
+            // localizaComCordenada();
 
         }else if(permissao === "denied"){
-            localizaSemCordenada()
+            // localizaSemCordenada()
 
         }else if(permissao === "prompt"){
-            localizaSemCordenada()
+            // localizaSemCordenada()
 
         }
     } ,[permissao])

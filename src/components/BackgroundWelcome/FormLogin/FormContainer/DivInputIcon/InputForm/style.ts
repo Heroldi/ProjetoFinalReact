@@ -58,4 +58,5 @@ border: none;
 font-weight: 700;
 color: #FFFFFF;
 font-size: 1rem;
+cursor: pointer;
 `;

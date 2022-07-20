@@ -8,8 +8,8 @@ export default function AppRouter()  {
     <Router>
     <Routes>
     <Route path='/' element={<Inicio />} />
-      <Route path='/home' element={<Inicio />} />
-      <Route path='/navegacao' element={<Navigation />} />
+      <Route path='/login' element={<Inicio />} />
+      <Route path='/home' element={<Navigation />} />
       <Route path='/cadastro' element={<Cadastro />} />
     </Routes>
     </Router>

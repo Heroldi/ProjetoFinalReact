@@ -10,7 +10,7 @@ position: relative;
 img{
     position: absolute;
     right: 57px;
-    top: 17px;
+    top: 22px;
     width:2%;
 }
 `;

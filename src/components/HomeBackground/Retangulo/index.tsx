@@ -18,26 +18,38 @@ const RetanguloGrad: React.FC = () => {
     const [tempo, setTempo] = useState<number>();
 
     function logout(){
-        window.location.href = ("/home");
+        localStorage.removeItem('Token');
+        window.location.href = ("/login");
     }
     function novaGuia(){
         window.open("http://www.google.com/");
     }
 
+    function exitToken(){
+        let token = localStorage.getItem('Token');
+        if(!token){
+            window.location.href = ("/login");
+        }
+    }
+
     function regresiva (contador: number = 60){
         setTimeout(() => {
+            
             if(contador > 0){
                 setTempo(contador - 1) ;
-                return(regresiva (contador - 1))
+                return(regresiva (contador - 1))                                        
             }else{
-                window.location.href = ("/home");
+                localStorage.removeItem('Token');
+                window.location.href = ("/login");              
             }
         }, 1000);
     }
 
+    setInterval(exitToken, 1000);
+
     return( 
         <>
-        {/* {regresiva(tempo)} */}
+        {regresiva(tempo)}
 <Retangulo>
     <DivTextLine>
         <Text>Essa janela do navegador é usada para manter sua sessão de autenticação ativa. Deixe-a aberta em segundo plano e abra uma nova janela para continuar a navegar.</Text>

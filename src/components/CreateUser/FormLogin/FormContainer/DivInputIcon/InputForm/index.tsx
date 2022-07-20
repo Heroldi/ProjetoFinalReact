@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react";
 import { Button } from "./style";
 import { InputForm } from './style';
 import { ErroLogin } from './style';
+import { CadastroLogin } from './style';
+import { LogarSe } from './style'
 import ImgUser from "./IconUser";
 import ImgSenha from "./IconPassword";
 
@@ -22,23 +24,7 @@ const Input: React.FC = () => {
   }
 
       async function SalvarBanco(){
-        const rawResponse = await fetch("http://localhost:8080/api/v1/users", {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: email,
-            senha: senha,
 
-          }),
-        });
-        const content = await rawResponse.json();
-      };
-
-      const handleSubmit = (event: any) => {
-        event.preventDefault(); 
         let emailFiltro = /^.+@.+\..{2,}$/;
         let senhaFiltro = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
      
@@ -52,10 +38,30 @@ const Input: React.FC = () => {
           setErroLogin(true);
           setStyleInput(true);
           console.log(senha);
-        }else{
-          SalvarBanco()
-          window.location.href ='/home'        
-        }                  
+        }else{     
+        
+
+        const rawResponse = await fetch("http://localhost:8080/users/registrar", {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+            senha: senha,
+
+          }),
+        });
+        const content = await rawResponse.json();
+
+        window.location.href ='/login'   
+      }
+      };
+
+      const handleSubmit = (event: any) => {
+        event.preventDefault(); 
+        SalvarBanco();
       }
 
       function mudaIconSenha(){
@@ -95,8 +101,9 @@ const Input: React.FC = () => {
             <form  onSubmit={handleSubmit}>
                 <InputForm autoComplete="off" style={{border: styleInput ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Email" name="email" value={email} onChange={OnChange} />
                 <ImgUser styleEmail={mudaIconEmail()}/>
-                <InputForm autoComplete="off" style={{border: styleInput ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Senha" name="senha" value={senha} onChange={event => setSenha(event.target.value)} />
+                <InputForm autoComplete="off" style={{border: styleInput ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="password" placeholder="Senha" name="senha" value={senha} onChange={event => setSenha(event.target.value)} />
                 <ImgSenha styleSenha={mudaIconSenha()} styleAltura={subirIcon()}/>  
+                <CadastroLogin> Já possui uma conta?<LogarSe href="http://localhost:3000/login">Logar-se</LogarSe></CadastroLogin>
                 {erroLogin && <ErroLogin>Ops, os campos não atendem aos requisitos</ErroLogin>}
                 <Button type="submit" value="Cadastrar"></Button>
             </form>
