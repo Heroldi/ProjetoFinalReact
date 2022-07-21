@@ -67,22 +67,24 @@ const Input: React.FC = () => {
           setErroSubirIcons(true);  
         }else{     
         
+          try{
+                const rawResponse = await fetch("http://localhost:8080/users/registrar", {
+                  method: "POST",
+                  headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                    email: email,
+                    senha: senha,
 
-        const rawResponse = await fetch("http://localhost:8080/users/registrar", {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: email,
-            senha: senha,
+                  }),
+                });
 
-          }),
-        });
-        const content = await rawResponse.json();
-
-        window.location.href ='/login'   
+                window.location.href ='/login'   
+        }catch{
+          alert("Ops, algo deu errado, tente novamente");
+        }
       }
       };
 

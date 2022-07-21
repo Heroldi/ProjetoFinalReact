@@ -15,10 +15,7 @@ const TempLocalizacaoFC: React.FC = () =>  {
     });     
     
     async function localizaComCordenada() {
-        navigator.geolocation.getCurrentPosition(function pegaCordenada (position: any){
-            setCordenadas({longitude: position.coords.longitude, latitude: position.coords.latitude});           
-         });
-         console.log(cordenadas);
+        try {
         const request = await fetch(`https://api.hgbrasil.com/weather?format=json-cors&lat=${cordenadas.latitude}&lon=${cordenadas.longitude}&key=148d2515`, {
             mode: 'cors',
             method: 'GET',
@@ -27,10 +24,15 @@ const TempLocalizacaoFC: React.FC = () =>  {
         })
         let dados = await request.json()   
         setCidade(dados.results.city)
-        setTemperatura(`${dados.results.temp}°`);     
+        setTemperatura(`${dados.results.temp}°`);    
+
+        }catch{
+            console.log("Não foi possivel obter a localização")
+    }  
     }
 
     async function localizaSemCordenada() {
+        try {
             const request = await fetch(`https://api.hgbrasil.com/weather?format=json-cors&woeid=455827&key=148d2515`, {
                 mode: 'cors',
                 method: 'GET',
@@ -39,13 +41,12 @@ const TempLocalizacaoFC: React.FC = () =>  {
             })
             let dados = await request.json()   
             setCidade(dados.results.city)
-            setTemperatura(`${dados.results.temp}°`);  
-            console.log("Sem cordenadas");
+            setTemperatura(`${dados.results.temp}°`); 
+
+        }catch{
+            console.log("Não foi possivel obter a localização")
+        } 
     }
-
-        
-
-      
 
       useEffect(()=> {  
         const statusPermissao = async () => {
@@ -61,15 +62,14 @@ const TempLocalizacaoFC: React.FC = () =>  {
     } ,[])
 
     useEffect(()=> {  
-        console.log(permissao);
         if(permissao === "granted"){ 
-            // localizaComCordenada();
+            localizaComCordenada();
 
         }else if(permissao === "denied"){
-            // localizaSemCordenada()
+            localizaSemCordenada()
 
         }else if(permissao === "prompt"){
-            // localizaSemCordenada()
+            localizaSemCordenada()
 
         }
     } ,[permissao])

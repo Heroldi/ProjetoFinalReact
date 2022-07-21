@@ -34,6 +34,7 @@ const Input: React.FC= () => {
           setErroLogin(true);
           setStyleInput(true);
         }else{
+          try{
           const rawResponse = await fetch("http://localhost:8080/users/login", {
           method: "POST",
           headers: {
@@ -47,15 +48,19 @@ const Input: React.FC= () => {
           });
 
         const content = await rawResponse.json();      
-
+          
         if(rawResponse.status != 200){
           setErroLogin(true);
           setStyleInput(true);     
-        }else{
-          let token = content.data.token
+        }else if(rawResponse.status === 200){
+          let token = content.data.token;
           localStorage.setItem("Token", token);
           window.location.href = "/home";
         }
+      }catch{
+        setErroLogin(true);
+        setStyleInput(true);
+      }
       };
       }
 

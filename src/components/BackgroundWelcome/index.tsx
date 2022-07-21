@@ -5,9 +5,11 @@ import ImagemFundo from './ImageLogin';
 
 const welcome: React.FC = () => {
 
-    async function validaToken(){
+  
+    async function validaToken(){     
         let token = localStorage.getItem('Token');
 
+      if(token){
         const rawResponse = await fetch("http://localhost:8080/users/verifica", {
           method: "POST",
           headers: {
@@ -26,6 +28,7 @@ const welcome: React.FC = () => {
             window.location.href = ("/home");
         }
     }
+  }
 
     validaToken();
     
