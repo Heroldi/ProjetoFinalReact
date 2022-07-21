@@ -1,9 +1,9 @@
 import React from "react";
 import { SectionWelcome } from './style'
-import Form from '../BackgroundWelcome/FormLogin';
+import FormLoginFC from "./FormLogin";
 import ImagemFundo from './ImageLogin';
 
-const welcome: React.FC = () => {
+const BackgroundWelcome: React.FC = () => {
 
   
     async function validaToken(){     
@@ -34,11 +34,11 @@ const welcome: React.FC = () => {
     
    return(
     <SectionWelcome>
-        <Form /> 
+        <FormLoginFC /> 
         <ImagemFundo/>
     </SectionWelcome>
    ) 
 }
 
 
-export default welcome;
+export default BackgroundWelcome;

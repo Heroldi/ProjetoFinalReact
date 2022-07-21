@@ -1,5 +1,5 @@
 import React from "react";
-import  imagem  from '../../../assets/img/LogoCompassoBranco.png';
+import  imagem  from '../../../../assets/img/LogoCompassoBranco.png';
 
 import { Img } from './style';
 

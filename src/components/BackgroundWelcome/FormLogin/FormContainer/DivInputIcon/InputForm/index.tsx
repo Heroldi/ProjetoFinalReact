@@ -1,14 +1,15 @@
 import React, {useEffect, useState} from "react";
-import { Button } from "./style";
+import { Button} from "./style";
 import { InputForm } from './style';
 import { ErroLogin } from './style'
 import { CadastroLogin } from './style';
 import { CadastreSe } from './style'
-import IconUser  from "./IconUser";
-import IconPassword from "./IconPassword";
+import { FormInput } from "./style";
+import IconUserFC from "./IconUser";
+import IconSenhaFC from "./IconPassword";
 
 
-const Input: React.FC= () => {
+const InputFormFC: React.FC= () => {
     const [erroLogin, setErroLogin] = useState(false);
     const [styleInput, setStyleInput] = useState(false);
     const [email, setEmail] = useState("");
@@ -99,25 +100,29 @@ const Input: React.FC= () => {
         subirIcon();
       },[erroLogin])
 
-      function OnChange(event: any){
+      function OnChangeEmail(event: any){
         setEmail(event.target.value);
         handleChange(event);
      }
+     function OnChangeSenha(event: any){
+      setSenha(event.target.value);
+      handleChange(event);
+   }
         
       
     return(
         <>
-            <form onSubmit={handleSubmit}> 
-                <InputForm autoComplete="off" style={{border: styleInput ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Email" name="email" value={email} onChange={OnChange} />
-                <IconUser styleEmail={mudaIconEmail()}/>
-                <InputForm autoComplete="off" style={{border: styleInput ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="password" placeholder="Senha" name="senha" value={senha} onChange={event => setSenha(event.target.value)} />
-                <IconPassword styleSenha={mudaIconSenha()} styleAltura={subirIcon()}/>           
+            <FormInput onSubmit={handleSubmit}> 
+                <InputForm autoComplete="off" style={{border: styleInput ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Email" name="email" value={email} onChange={OnChangeEmail} />
+                <IconUserFC styleEmail={mudaIconEmail()} styleAltura={subirIcon()}/>
+                <InputForm autoComplete="off" style={{border: styleInput ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="password" placeholder="Senha" name="senha" value={senha} onChange={OnChangeSenha} />
+                <IconSenhaFC styleSenha={mudaIconSenha()} styleAltura={subirIcon()}/>           
                 <CadastroLogin> Não possui conta?<CadastreSe href="http://localhost:3000/cadastro">Cadastre-se</CadastreSe></CadastroLogin>
                 {erroLogin && <ErroLogin>Ops, usuário ou senha inválidos. Tente novamente!</ErroLogin>}
                 <Button type="submit" value="Continuar"></Button>
-            </form>
+            </FormInput>
         </>
  
 )};
 
-export default Input;
+export default InputFormFC;
