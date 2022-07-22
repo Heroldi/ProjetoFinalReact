@@ -16,7 +16,6 @@ const IconUserFC: React.FC<propsEmailIcon> = ({styleEmail, styleAltura}) => {
 
     function PegaAltura(){
         let largura = window.screen.width;
-        console.log(largura);
 
         if(largura <= 2560 && largura >= 1441){
             setLeftInicial(`${93}%`)
@@ -26,10 +25,15 @@ const IconUserFC: React.FC<propsEmailIcon> = ({styleEmail, styleAltura}) => {
             setLeftFinal(`${78}%`)
             setTopInicial(`${4.2}%`)
             setTopFinal(`${2.9}%`)
-        }else if(largura <= 1024 && largura >= 768){
+        }else if(largura <= 1024 && largura >= 769){
             setLeftInicial(`${95}%`)
             setLeftFinal(`${78}%`)
             setTopInicial(`${4.2}%`)
+            setTopFinal(`${3.2}%`)
+        }else if(largura <= 768 && largura >= 426){
+            setLeftInicial(`${93}%`)
+            setLeftFinal(`${78}%`)
+            setTopInicial(`${4.1}%`)
             setTopFinal(`${3.2}%`)
         }
     }

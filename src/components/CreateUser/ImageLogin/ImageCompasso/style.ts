@@ -24,4 +24,18 @@ img {
     top: 2rem;
     right: 25%;
     }
+
+@media (min-width:769px) and (max-width: 1024x){
+        width: 17rem;
+        height: 3.8rem;
+        top: 2rem;
+        right: 25%;
+    }
+
+@media (min-width:425px) and (max-width: 768px){
+    width: 17rem;
+    height: 3.8rem;
+    top: 3.8rem;
+    left: 50%;
+    }
 `;

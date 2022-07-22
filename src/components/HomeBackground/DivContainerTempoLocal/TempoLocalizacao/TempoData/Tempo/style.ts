@@ -6,5 +6,21 @@ export const Tempo= styled.h1`
     font-size: 6rem;
     color: black;
     font-weight: 700;
-    margin-bottom: -25px;
+    margin-bottom: -20px;
+
+    @media (min-width:1441px) and (max-width: 2560px){
+        font-size: 7rem;
+    }
+
+    @media (min-width:1025px) and (max-width: 1440px){
+        font-size: 7rem;
+    }
+
+    @media (min-width:769px) and (max-width: 1024px){
+        font-size: 7rem;
+    }    
+
+    @media (min-width:425px) and (max-width: 768px){
+        font-size: 5rem;
+    }
 `;

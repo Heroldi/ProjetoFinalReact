@@ -26,4 +26,12 @@ export const FormContainer = styled.div`
         width: 21rem;
         height: 50rem;
     }
+    
+    @media (min-width:425px) and (max-width: 768px){
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+    }
 `;

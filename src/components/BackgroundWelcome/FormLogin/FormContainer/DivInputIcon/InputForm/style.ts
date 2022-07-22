@@ -2,6 +2,13 @@ import styled from "styled-components";
 
 export const FormInput = styled.form `
     width: 90%;
+
+    @media (min-width:425px) and (max-width: 768px){
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 `;
 
 export const InputForm = styled.input`
@@ -62,7 +69,22 @@ export const InputForm = styled.input`
       ::placeholder {
         font-size: 1.3rem;
       }
-}
+    }
+
+      @media (min-width:425px) and (max-width: 768px){
+        height: 4rem;
+        width: 90%;
+        border-radius: 2rem;
+        margin-bottom: 2rem; 
+        border: 1px solid #FFFFFF;
+        padding: 1.3rem;
+        font-size: 1.5rem;
+        align-self: start;
+    
+        ::placeholder {
+          font-size: 1.5rem;
+        }
+    }
 `;
 
 
@@ -83,10 +105,15 @@ export const CadastroLogin = styled.p `
     margin-top: 0.2rem;
   }
 
-    @media (min-width:769px) and (max-width: 1024px){
+  @media (min-width:769px) and (max-width: 1024px){
       font-size: 1rem;
       margin-top: 0.2rem;
-    }
+  }
+
+  @media (min-width:425px) and (max-width: 768px){
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+  }
 
 `;
 
@@ -119,6 +146,12 @@ export const CadastreSe = styled.a `
     margin-top: 0.2rem;
     margin-left: 0.6rem;
   }
+
+  @media (min-width:425px) and (max-width: 768px){
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+    margin-left: 0.6rem;
+  }
 `;
 
 export const ErroLogin = styled.p `
@@ -140,6 +173,11 @@ export const ErroLogin = styled.p `
 
   @media (min-width:769px) and (max-width: 1024px){
     font-size: 1rem;
+    margin-top: 3rem;
+  }
+
+  @media (min-width:425px) and (max-width: 768px){
+    font-size: 1.1rem;
     margin-top: 3rem;
   }
   
@@ -179,5 +217,13 @@ export const Button = styled.input `
     margin-top: 6vh;
     border-radius: 2rem;
     font-size: 1.2rem;
+  }
+
+  @media (min-width:425px) and (max-width: 768px){
+    height: 3rem;
+    width: 90%;
+    margin-top: 6vh;
+    border-radius: 2rem;
+    font-size: 1.3rem;
   }
 `;

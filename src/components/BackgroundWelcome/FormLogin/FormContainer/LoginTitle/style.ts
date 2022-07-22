@@ -21,4 +21,9 @@ export const LoginTitle = styled.h2`
         font-size: 1.7rem;
         margin-bottom: 1.2rem;
     }
+
+    @media (min-width:425px) and (max-width: 768px){
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
 `;

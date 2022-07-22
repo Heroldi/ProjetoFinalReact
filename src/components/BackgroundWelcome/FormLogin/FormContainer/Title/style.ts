@@ -20,7 +20,12 @@ export const Titulo = styled.h1`
     @media (min-width:769px) and (max-width: 1024px){
         font-size: 3.2rem;
         margin-bottom: 0.9rem;
-    }    
+    }  
+    @media (min-width:425px) and (max-width: 768px){
+        font-size: 3.8rem;
+        margin-bottom: 0.9rem;
+        align-self: start;
+    }  
 
 `;
 
@@ -48,5 +53,12 @@ export const Paragrafo = styled.p`
         font-size: 1rem;
         width: 18rem;
         margin-bottom: 7rem;
+    }
+
+    @media (min-width:425px) and (max-width: 768px){
+        font-size: 1rem;
+        width: 90%;
+        margin-bottom: 5rem;
+        align-self: start;
     }
 `;
