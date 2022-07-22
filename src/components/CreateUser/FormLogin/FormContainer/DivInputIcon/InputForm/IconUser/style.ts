@@ -30,8 +30,18 @@ img {
     width: 1.7rem;
     }
 
-@media (min-width:376px) and (max-width: 425px){
-    height: 1.9rem;
-    width: 1.7rem;
+@media (min-width: 376px) and (max-width: 425px){
+        height: 1.9rem;
+        width: 1.7rem;
+    }
+
+@media (min-width:321px) and (max-width: 375px){
+    height: 1.6rem;
+    width: 1.4rem;
+    }
+
+@media (width: 320px){
+    height: 1.4rem;
+    width: 1.2rem;
     }
 `;

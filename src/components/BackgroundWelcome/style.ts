@@ -22,5 +22,10 @@ overflow: hidden;
     align-items: center;
 }
 
+@media (width: 320px){
+    justify-content: center;
+    align-items: center;
+}
+
 
 `;

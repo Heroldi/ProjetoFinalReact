@@ -117,9 +117,9 @@ const InputFormFC: React.FC= () => {
                 <IconUserFC styleEmail={mudaIconEmail()} styleAltura={subirIcon()}/>
                 <InputForm autoComplete="off" style={{border: styleInput ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="password" placeholder="Senha" name="senha" value={senha} onChange={OnChangeSenha} />
                 <IconSenhaFC styleSenha={mudaIconSenha()} styleAltura={subirIcon()}/>           
-                <CadastroLogin> Não possui conta?<CadastreSe href="http://localhost:3000/cadastro">Cadastre-se</CadastreSe></CadastroLogin>
-                {erroLogin && <ErroLogin>Ops, usuário ou senha inválidos. Tente novamente!</ErroLogin>}
+                {erroLogin && <ErroLogin>Ops, usuário ou senha inválidos. Tente novamente!</ErroLogin>}      
                 <Button type="submit" value="Continuar"></Button>
+                <CadastroLogin> Não possui conta?<CadastreSe href="http://localhost:3000/cadastro">Cadastre-se</CadastreSe></CadastroLogin>
             </FormInput>
         </>
  

@@ -89,4 +89,12 @@ export const Paragrafo = styled.p`
         align-self: start;
         margin-left: 10px;
     }
+
+    @media (width:320px){
+        font-size: 1rem;
+        width: 90%;
+        margin-bottom: 2rem;
+        align-self: start;
+        margin-left: 10px;
+    }
 `;

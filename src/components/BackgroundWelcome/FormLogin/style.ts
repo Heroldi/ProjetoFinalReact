@@ -26,7 +26,15 @@ justify-content: center;
     }
 
 @media (min-width:321px) and (max-width: 375px){
-    height: 70vh;
+    height: 61vh;
+    width: 90vw;
+    border: #E0E0E0 solid 1px;
+    border-radius: 50px;
+    z-index: 1;
+}
+
+@media (width: 320px){
+    height: 56vh;
     width: 90vw;
     border: #E0E0E0 solid 1px;
     border-radius: 50px;

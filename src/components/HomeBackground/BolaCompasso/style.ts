@@ -14,7 +14,7 @@ img {
 
 
 @media (min-width:1441px) and (max-width: 2560px){
-    top: 12rem;
+    top: 10rem;
     img {
         max-width: 100%;
         max-height:100%;
@@ -36,32 +36,22 @@ img {
     }
 
 @media (min-width:769px) and (max-width: 1024px){
-    top: 38rem;
-    img {
-        max-width: 100%;
-        max-height:100%;
-        width: 20rem;
-    }
-
-    @media (height: 720px){
-        display: none;
-    }
+    display: none;
     }
 
 @media (min-width:426px) and (max-width: 768px){
-    top: 35rem;
-    img {
-        max-width: 100%;
-        max-height:100%;
-        width: 20rem;
-    }
-    @media (height: 720px){
-        display: none;
-    }
+    display: none;
     }
 
 @media (min-width:376px) and (max-width: 425px){
     display: none;
+    }
 
+@media (min-width:321px) and (max-width: 375px){
+        display: none;
+    }
+
+@media (width:320px){
+        display: none;
     }
 `;

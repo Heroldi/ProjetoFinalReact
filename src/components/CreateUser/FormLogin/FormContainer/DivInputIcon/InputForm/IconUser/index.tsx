@@ -36,10 +36,20 @@ const ImgUser: React.FC<propsEmailIcon> = ({styleEmail, styleAltura}) => {
             setLeftFinal(`${78}%`)
             setTopInicial(`${4.1}%`)
             setTopFinal(`${3.2}%`)
-        }else if(largura <= 425 && largura >= 375){
+        }else if(largura <= 425 && largura >= 376){
             setLeftInicial(`${91}%`)
             setLeftFinal(`${75}%`)
             setTopInicial(`${4.7}%`)
+            setTopFinal(`${3.2}%`)
+        }else if(largura <= 375 && largura >= 321){
+            setLeftInicial(`${91}%`)
+            setLeftFinal(`${75}%`)
+            setTopInicial(`${4.7}%`)
+            setTopFinal(`${3.2}%`)
+        }else if(largura <= 320 && largura >= 0){
+            setLeftInicial(`${92}%`)
+            setLeftFinal(`${75}%`)
+            setTopInicial(`${4.5}%`)
             setTopFinal(`${3.2}%`)
         }
     }

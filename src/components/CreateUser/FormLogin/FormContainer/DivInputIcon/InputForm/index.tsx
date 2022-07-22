@@ -139,10 +139,10 @@ const Input: React.FC = () => {
                 <ImgUser styleEmail={mudaIconEmail()} styleAltura={subirIcon()}/>
                 <InputForm autoComplete="off" style={{border: styleInputSenha ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Senha" name="senha" value={senha} onChange={OnChangeSenha}/>
                 <ImgSenha styleSenha={mudaIconSenha()} styleAltura={subirIcon()}/>  
-                <CadastroLogin> Já possui uma conta?<LogarSe href="http://localhost:3000/login">Logar-se</LogarSe></CadastroLogin>
                 {erroEmail && <ErroLogin>Ops, o campo email não atende aos requisitos</ErroLogin> }
                 {erroSenha && <ErroLogin>Ops, o campo senha não atende aos requisitos</ErroLogin>}
                 <Button type="submit" value="Cadastrar"></Button>
+                <CadastroLogin> Já possui uma conta?<LogarSe href="http://localhost:3000/login">Logar-se</LogarSe></CadastroLogin>
             </FormInput>
         </>
  

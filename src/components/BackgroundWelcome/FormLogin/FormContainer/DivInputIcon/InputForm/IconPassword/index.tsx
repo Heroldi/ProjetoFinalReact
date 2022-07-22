@@ -22,27 +22,37 @@ const IconSenhaFC: React.FC<propsSenhaIcon> = ({styleSenha, styleAltura}) => {
         if(largura <= 2560 && largura >= 1441){
             setLeftInicial(`${93}%`)
             setLeftFinal(`${81}%`)
-            setTopInicial(`${31.5}%`)
+            setTopInicial(`${27}%`)
             setTopFinal(`${24}%`)
         }else if(largura <= 1440 && largura >= 1025){
             setLeftInicial(`${95}%`)
             setLeftFinal(`${78}%`)
-            setTopInicial(`${30.5}%`)
+            setTopInicial(`${25}%`)
             setTopFinal(`${22}%`)
         }else if(largura <= 1024 && largura >= 769){
             setLeftInicial(`${95}%`)
             setLeftFinal(`${78}%`)
-            setTopInicial(`${31}%`)
+            setTopInicial(`${27}%`)
             setTopFinal(`${24}%`)
         }else if(largura <= 768 && largura >= 426){
             setLeftInicial(`${93}%`)
             setLeftFinal(`${78}%`)
-            setTopInicial(`${33.3}%`)
+            setTopInicial(`${30}%`)
             setTopFinal(`${26.5}%`)
-        }else if(largura <= 425 && largura >= 375){
+        }else if(largura <= 425 && largura >= 376){
             setLeftInicial(`${91}%`)
             setLeftFinal(`${75}%`)
-            setTopInicial(`${36}%`)
+            setTopInicial(`${28}%`)
+            setTopFinal(`${26.5}%`)
+        }else if(largura <= 375 && largura >= 321){
+            setLeftInicial(`${91}%`)
+            setLeftFinal(`${75}%`)
+            setTopInicial(`${30}%`)
+            setTopFinal(`${26.5}%`)
+        }else if(largura <= 320 && largura >= 0){
+            setLeftInicial(`${92}%`)
+            setLeftFinal(`${75}%`)
+            setTopInicial(`${30}%`)
             setTopFinal(`${26.5}%`)
         }
     }

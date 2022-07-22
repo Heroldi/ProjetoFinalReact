@@ -52,4 +52,11 @@ img {
     top: 2rem;
     left: 50%;
     }
+
+@media (width: 320px){
+    width: 15rem;
+    height: 3rem;
+    top: 2rem;
+    left: 50%;
+}
 `;

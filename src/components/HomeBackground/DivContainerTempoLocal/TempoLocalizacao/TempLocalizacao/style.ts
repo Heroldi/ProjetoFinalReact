@@ -60,4 +60,27 @@ img{
         }
        
     }
+
+@media (min-width:320px) and (max-width: 375px){
+        margin-right: 5px;
+     margin-top: 5px;
+     img{
+        right: 65px;
+        top: 30px;
+        width: 2.2rem;
+        z-indes: 1;
+        }
+    }
+
+@media (width:320px){
+    margin-right: 5px;
+    margin-top: 5px;
+    img{
+       right: 55px;
+       top: 22px;
+       width: 1.9rem;
+       z-indes: 1;
+       }
+}
+
 `;

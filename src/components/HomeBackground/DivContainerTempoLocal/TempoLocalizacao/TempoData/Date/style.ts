@@ -25,4 +25,14 @@ export const Data= styled.h2`
         font-size: 1rem;
         margin-left: 5px;
     }
+
+    @media (min-width:320px) and (max-width: 375px){
+        font-size: 1rem;
+        margin-left: 5px;
+    }
+
+    @media (width:320px){
+        font-size: 0.7rem;
+        margin-left: 5px;
+    }
 `;

@@ -42,4 +42,20 @@ export const FormContainer = styled.div`
         height: 100%;
         padding: 10px;
         }
+
+    @media (min-width:321px) and (max-width: 375px){
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+    }
+
+    @media (width: 320px){
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+    }
 `;

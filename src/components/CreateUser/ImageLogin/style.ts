@@ -20,4 +20,14 @@ img {
     position:fixed;
 }
 
+@media (min-width:321px) and (max-width: 375px){
+    width: 100vw;
+    position:fixed;
+}
+
+@media (width: 320px){
+    width: 100vw;
+    position:fixed;
+}
+
 `;

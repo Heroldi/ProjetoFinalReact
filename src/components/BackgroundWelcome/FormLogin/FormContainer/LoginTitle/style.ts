@@ -38,4 +38,10 @@ export const LoginTitle = styled.h2`
         margin-bottom: 1.5rem;
         margin-left: 10px;
     }
+
+    @media (width: 320px){
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        margin-left: 10px;
+    }
 `;

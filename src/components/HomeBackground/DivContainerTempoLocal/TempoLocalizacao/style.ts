@@ -23,4 +23,16 @@ export const TempoLocalizacao= styled.div`
         justify-content: space-between;
     }
 
+    @media (min-width:320px) and (max-width: 375px){
+        align-items: start;
+        width:100%;
+        justify-content: space-between;
+    }
+
+    @media (width:320px){
+        align-items: start;
+        width:100%;
+        justify-content: space-between;
+    }
+
 `;

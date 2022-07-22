@@ -52,14 +52,19 @@ img {
 
 @media (min-width:376px) and (max-width: 425px){
 
-    height: 4rem;
-    width: 15rem;
-    top: 10%;
-    left: 20%;
+    display: none;
+}
+
+@media (min-width: 321px) and (max-width: 375px){
+
+    display: none;
 
     @media (height: 720px){
         display: none;
     }
+}
 
-    }
+@media (width:320px){
+    display: none;
+}
 `;

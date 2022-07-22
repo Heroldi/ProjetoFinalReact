@@ -18,8 +18,24 @@ justify-content: center;
 }
 
 @media (min-width:376px) and (max-width: 425px){
-    height: 75vh;
-    width: 95vw;
+    height: 70vh;
+    width: 90vw;
+    border: #E0E0E0 solid 1px;
+    border-radius: 50px;
+    z-index: 1;
+    }
+
+@media (min-width:321px) and (max-width: 375px){
+    height: 70vh;
+    width: 90vw;
+    border: #E0E0E0 solid 1px;
+    border-radius: 50px;
+    z-index: 1;
+}
+
+@media (width: 320px){
+    height: 62vh;
+    width: 90vw;
     border: #E0E0E0 solid 1px;
     border-radius: 50px;
     z-index: 1;

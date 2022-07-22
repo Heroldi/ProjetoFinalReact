@@ -9,4 +9,14 @@ justify-content: flex-end;
     justify-content: space-around;
     height: 10%;
 }
+
+@media (min-width:320px) and (max-width: 375px){
+    justify-content: space-around;
+    height: 10%;
+}
+
+@media (width:320px){
+    justify-content: space-around;
+    height: 10%;
+}
 `;

@@ -10,14 +10,17 @@ export const Retangulo = styled.div`
 
 @media (min-width:1441px) and (max-width: 2560px){
     height: 5rem;
+    justify-content: space-between;
     }
         
 @media (min-width:1025px) and (max-width: 1440px){
     height: 6rem;
+    justify-content: space-between;
 }
 
 @media (min-width:769px) and (max-width: 1024px){
     height: 5rem;
+    justify-content: space-between;
 }
 
 
@@ -27,6 +30,22 @@ export const Retangulo = styled.div`
 }
 
 @media (min-width:376px) and (max-width: 425px){
+    height: 35%;
+    justify-content: end;
+    align-items: center;
+    position: static;
+    flex-direction: column;
+}
+
+@media (min-width:321px) and (max-width: 375px){
+    height: 35%;
+    justify-content: end;
+    align-items: center;
+    position: static;
+    flex-direction: column;
+}
+
+@media (width: 320px) {
     height: 35%;
     justify-content: end;
     align-items: center;
@@ -49,6 +68,9 @@ export const DivTextLine = styled.div`
 
     @media (min-width:1441px) and (max-width: 2560px){
             margin-left: 30rem;
+            width: 40%;
+            height: 100%;
+            margin-left: 20rem;
             img {
                 height: 75%;
                 width: 0.1rem;
@@ -57,30 +79,34 @@ export const DivTextLine = styled.div`
         }
 
     @media (min-width:1025px) and (max-width: 1440px){
-        margin-left: 15rem;
+        margin-left: 30rem;
+        width: 40%;
         height: 100%;
-            img {
-                height: 75%;
-                width: 0.1rem;
-                margin-left: 3rem;
-                align-self: center;
-            }
+        margin-left: 5rem;
+        img {
+            height: 75%;
+            width: 0.1rem;
+            margin-left: 4rem;
+        }
         }
 
     @media (min-width:769px) and (max-width: 1024px){
-        margin-left: 10rem;
+        margin-left: 30rem;
+        width: 40%;
         height: 100%;
-            img {
-                height: 75%;
-                width: 0.1rem;
-                margin-left: 2rem;
-                align-self: center;
-            }
+        margin-left: 2rem;
+        img {
+            height: 75%;
+            width: 0.1rem;
+            margin-left: 4rem;
+        }
     }
 
     @media (min-width:426px) and (max-width: 768px){
         height: 100%;
-        margin-left: 1rem;
+        width: 40%;
+        margin-left: 0px;
+        padding-left: 5px;
             img {
                 height: 75%;
                 width: 0.2rem;
@@ -88,7 +114,30 @@ export const DivTextLine = styled.div`
                 align-self: center;
             }
     }
+    
     @media (min-width:376px) and (max-width: 425px){
+        height: 33%;
+        width: 100%;
+        order: 3;
+        margin-left: 0px;
+        padding: 1px 10px 1px 10px;
+            img {
+                display: none;
+            }
+    }
+
+    @media (min-width:321px) and (max-width: 375px){
+        height: 33%;
+        width: 100%;
+        order: 3;
+        margin-left: 0px;
+        padding: 1px 10px 1px 10px;
+            img {
+                display: none;
+            }
+    }
+
+    @media (width: 320px) {
         height: 33%;
         width: 100%;
         order: 3;
@@ -130,9 +179,27 @@ export const Text = styled.p`
             font-size: 1rem;
         }
         margin-top: 0px;
+        font-size: 1.1rem;
+        text-align: center;
+        }
+
+    @media (min-width:321px) and (max-width: 375px){
+        @media (height: 720px){
+            font-size: 1rem;
+        }
+        margin-top: 0px;
         font-size: 1.2rem;
         text-align: center;
         }
+
+    @media (width: 320px) {
+        @media (height: 720px){
+            font-size: 1rem;
+        }
+        margin-top: 0px;
+        font-size: 1rem;
+        text-align: center;
+    }
 `;
 
 export const DivText2Timer = styled.div`
@@ -143,26 +210,61 @@ export const DivText2Timer = styled.div`
     margin-left: 3.1rem;
 
     @media (min-width:1441px) and (max-width: 2560px){
+        height: 100%;
         margin-left: 7rem;
         height: 100%;
+        align-items: center;
+        justify-content: center;
     }
 
     @media (min-width:1025px) and (max-width: 1440px){
-        margin-left: 5rem;
         height: 100%;
+        margin-left: 7rem;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
     }
 
     @media (min-width:769px) and (max-width: 1024px){
+        margin-left: 0rem;
         height: 100%;
     }
 
     @media (min-width:426px) and (max-width: 768px){
         margin-left: -4rem;
+        justify-content: end;
+        align-items: center;
         height: 100%;
-        width: 11rem;
+        width: 30%;
     }
 
     @media (min-width:376px) and (max-width: 425px){
+        height: 33%;
+        width: 100%;
+        order: 2;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-bottom: 10px;
+        border: 0.2px solid #FFFFFF;
+    }
+
+    @media (min-width:321px) and (max-width: 375px){
+        height: 33%;
+        width: 100%;
+        order: 2;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-bottom: 10px;
+        border: 0.2px solid #FFFFFF;
+        }
+
+    @media (width: 320px) {
         height: 33%;
         width: 100%;
         order: 2;
@@ -185,7 +287,8 @@ export const Text2 = styled.p`
 
     @media (min-width:1441px) and (max-width: 2560px){
         font-size: 1.3rem;
-        margin-top: 1.5rem;
+        margin-top: 10px;
+        margin-bottom: 2px;
     }
 
     @media (min-width:1025px) and (max-width: 1440px){
@@ -197,13 +300,33 @@ export const Text2 = styled.p`
         font-size:  0.8rem;
         margin-top: 1.3rem;
         }
+    
+    @media (min-width:426px) and (max-width: 768px){
+            font-size:  0.8rem;
+            margin-top: 0px;
+            margin-bottom: 0.8rem;
+        }
 
     @media (min-width:376px) and (max-width: 425px){
         font-size:  1.5rem;
         margin-top: 0px;
         margin-right: 40px;
         width: 7rem;
-        }
+    }
+
+    @media (min-width:321px) and (max-width: 375px){
+        font-size:  1.5rem;
+        margin-top: 0px;
+        margin-right: 40px;
+        width: 7rem;
+    }
+
+    @media (width: 320px) {
+        font-size:  1.3rem;
+        margin-top: 0px;
+        margin-right: 40px;
+        width: 7rem;
+    }
 `;
 
 export const DivTimer = styled.div`
@@ -224,11 +347,11 @@ export const DivTimer = styled.div`
        height: 100%;
         justify-content: end;
         h2 {
-            font-size: 2.7rem;  
+            font-size: 2.5rem;  
         }
         h3 {
             font-size: 1.5rem;
-            margin-bottom: 10px;
+            margin-bottom: 1px;
         }
     }
 
@@ -263,8 +386,7 @@ export const DivTimer = styled.div`
         height: 100%;
         width: 7rem;
         justify-content: end; 
-        margin: 0 auto;
-        margin-left: 2rem;
+        margin-left: 0px;
         h2 {
             font-size: 2rem;  
         }
@@ -287,6 +409,32 @@ export const DivTimer = styled.div`
         margin-top: 5px;
         }
         }
+
+    @media (min-width:321px) and (max-width: 375px){
+         width: 7rem;
+        justify-content: end; 
+        margin-left: 1px;
+        h2 {
+            font-size: 2rem;  
+        }
+        h3 {
+        font-size: 1.5rem;
+        margin-top: 5px;
+        }
+        }
+
+    @media (width: 320px) {
+        width: 7rem;
+        justify-content: end; 
+        margin-left: 1px;
+        h2 {
+            font-size: 1.8rem;  
+        }
+        h3 {
+        font-size: 1.3rem;
+        margin-top: 5px;
+        }
+        }
 `;
 export const DivNavegLogout = styled.div`
     display: flex;
@@ -294,7 +442,7 @@ export const DivNavegLogout = styled.div`
     flex-direction: row;
 
     @media (min-width:426px) and (max-width: 768px){
-        width: 14rem;
+        width: 30%;
         } 
 
     @media (min-width:376px) and (max-width: 425px){
@@ -303,6 +451,20 @@ export const DivNavegLogout = styled.div`
         height: 33%;
         justify-content: center;
 
+    }
+
+    @media (min-width:321px) and (max-width: 375px){
+        width: 100%;
+        order: 1;
+        height: 33%;
+        justify-content: center;
+    }
+
+    @media (width: 320px) {
+        width: 100%;
+        order: 1;
+        height: 33%;
+        justify-content: center;
     }
 `;
 export const DivNavegacao = styled.div`
@@ -356,6 +518,24 @@ export const DivNavegacao = styled.div`
             font-weight: 500;
         }
     }
+
+    @media (min-width:321px) and (max-width: 375px){
+        width: 50%;
+        justify-content: center;
+        p {
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+    }
+
+    @media (width: 320px) {
+        width: 50%;
+        justify-content: center;
+        p {
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+    }
 `;
 
 export const TextLogout = styled.div`
@@ -385,6 +565,7 @@ export const TextLogout = styled.div`
             font-size: 1.2rem;
         }
         }
+
     @media (min-width:769px) and (max-width: 1024px){
         p{
             font-size: 0.9rem;
@@ -405,6 +586,24 @@ export const TextLogout = styled.div`
             font-weight: 500;
         }
         }
+
+    @media (min-width:321px) and (max-width: 375px){
+           width: 50%;
+         justify-content: center;
+        p {
+            font-size: 2rem;
+            font-weight: 500;
+        }
+    }
+
+    @media (width: 320px) {
+        width: 50%;
+        justify-content: center;
+       p {
+           font-size: 1.5rem;
+           font-weight: 500;
+       }
+    }
 
     
 `;

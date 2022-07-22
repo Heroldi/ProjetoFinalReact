@@ -25,4 +25,9 @@ img {
     position:fixed;
 }
 
+@media (width: 320px){
+    width: 100vw;
+    position:fixed;
+}
+
 `;

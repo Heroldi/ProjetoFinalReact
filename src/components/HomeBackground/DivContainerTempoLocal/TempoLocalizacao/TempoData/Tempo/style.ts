@@ -29,4 +29,16 @@ export const Tempo= styled.h1`
         margin-top: -2px;
         margin-bottom: -10px;
     }
+
+    @media (min-width:320px) and (max-width: 375px){
+        font-size: 4rem;
+        margin-top: -2px;
+        margin-bottom: -10px;
+    }
+
+    @media (width:320px){
+        font-size: 3.5rem;
+        margin-top: -2px;
+        margin-bottom: -10px;
+    }
 `;
