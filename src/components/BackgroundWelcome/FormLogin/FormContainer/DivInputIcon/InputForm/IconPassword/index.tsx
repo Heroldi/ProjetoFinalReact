@@ -39,6 +39,11 @@ const IconSenhaFC: React.FC<propsSenhaIcon> = ({styleSenha, styleAltura}) => {
             setLeftFinal(`${78}%`)
             setTopInicial(`${33.3}%`)
             setTopFinal(`${26.5}%`)
+        }else if(largura <= 425 && largura >= 375){
+            setLeftInicial(`${91}%`)
+            setLeftFinal(`${75}%`)
+            setTopInicial(`${36}%`)
+            setTopFinal(`${26.5}%`)
         }
     }
 

@@ -12,8 +12,15 @@ export const TempoLocalizacao= styled.div`
          justify-content:  space-around;
     }
 
-    @media (min-width:425px) and (max-width: 768px){
+    @media (min-width:426px) and (max-width: 768px){
         width: 500px;
          justify-content:  space-around;
     }
+
+    @media (min-width:376px) and (max-width: 425px){
+        align-items: start;
+        width:100%;
+        justify-content: space-between;
+    }
+
 `;

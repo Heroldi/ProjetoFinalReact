@@ -8,6 +8,7 @@ const welcome: React.FC = () => {
         let token = localStorage.getItem('Token');
 
       if(token){
+        try {
         const rawResponse = await fetch("http://localhost:8080/users/verifica", {
           method: "POST",
           headers: {
@@ -24,6 +25,9 @@ const welcome: React.FC = () => {
 
         if(content.status === true){
             window.location.href = ("/home");
+        }
+        }catch{
+          console.log("Erro ao validar o token");
         }
       }
     }

@@ -12,8 +12,8 @@ const welcome: React.FC = () =>
     <BolaCompasso/>
     <LogoCompassoPreto />
     <DivContainerTempoLocal/>
-    <TextoCentral/>
-    <Retangulo/>
+    <TextoCentral/> 
+     <Retangulo/>
 </HomeBackground>
 
 </>

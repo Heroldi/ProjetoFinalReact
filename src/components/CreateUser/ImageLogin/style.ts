@@ -10,8 +10,14 @@ img {
     object-fit: cover;
 }
 
-@media (min-width:425px) and (max-width: 768px){
+@media (min-width:426px) and (max-width: 768px){
     width: 100vw;
     position:fixed;
 }
+
+@media (min-width:376px) and (max-width: 425px){
+    width: 100vw;
+    position:fixed;
+}
+
 `;

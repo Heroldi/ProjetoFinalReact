@@ -27,7 +27,23 @@ export const FormContainer = styled.div`
         height: 50rem;
     }
     
-    @media (min-width:425px) and (max-width: 768px){
+    @media (min-width:426px) and (max-width: 768px){
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+    }
+
+    @media (min-width:376px) and (max-width: 425px){
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        }
+
+    @media (min-width:321px) and (max-width: 375px){
         justify-content: center;
         align-items: center;
         width: 100%;

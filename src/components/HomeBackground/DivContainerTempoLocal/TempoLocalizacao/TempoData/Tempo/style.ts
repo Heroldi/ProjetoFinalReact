@@ -20,7 +20,13 @@ export const Tempo= styled.h1`
         font-size: 7rem;
     }    
 
-    @media (min-width:425px) and (max-width: 768px){
+    @media (min-width:426px) and (max-width: 768px){
         font-size: 5rem;
+    }
+
+    @media (min-width:376px) and (max-width: 425px){
+        font-size: 4rem;
+        margin-top: -2px;
+        margin-bottom: -10px;
     }
 `;

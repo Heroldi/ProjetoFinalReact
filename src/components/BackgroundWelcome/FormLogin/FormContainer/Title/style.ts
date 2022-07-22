@@ -21,11 +21,23 @@ export const Titulo = styled.h1`
         font-size: 3.2rem;
         margin-bottom: 0.9rem;
     }  
-    @media (min-width:425px) and (max-width: 768px){
+    @media (min-width:426px) and (max-width: 768px){
         font-size: 3.8rem;
         margin-bottom: 0.9rem;
         align-self: start;
     }  
+
+    @media (min-width:376px) and (max-width: 425px){
+        font-size: 3.8rem;
+        margin-bottom: 0.9rem;
+        align-self: start;
+        }
+
+    @media (min-width:321px) and (max-width: 375px){
+        font-size: 3.6rem;
+        margin-bottom: 0.9rem;
+        align-self: start;
+    }
 
 `;
 
@@ -55,10 +67,26 @@ export const Paragrafo = styled.p`
         margin-bottom: 7rem;
     }
 
-    @media (min-width:425px) and (max-width: 768px){
+    @media (min-width:426px) and (max-width: 768px){
         font-size: 1rem;
         width: 90%;
         margin-bottom: 5rem;
         align-self: start;
+    }
+
+    @media (min-width:376px) and (max-width: 425px){
+        font-size: 1rem;
+        width: 90%;
+        margin-bottom: 4rem;
+        align-self: start;
+        margin-left: 10px;
+    }
+
+    @media (min-width:321px) and (max-width: 375px){
+        font-size: 1rem;
+        width: 90%;
+        margin-bottom: 4rem;
+        align-self: start;
+        margin-left: 10px;
     }
 `;

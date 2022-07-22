@@ -25,8 +25,13 @@ img {
     width: 1.4rem;
     }
 
-@media (min-width:425px) and (max-width: 768px){
+@media (min-width:426px) and (max-width: 768px){
     height: 1.9rem;
     width: 1.7rem;
+    }
+
+@media (min-width:321px) and (max-width: 375px){
+    height: 1.7rem;
+    width: 1.5rem;
     }
 `;

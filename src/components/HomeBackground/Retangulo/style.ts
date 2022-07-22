@@ -21,16 +21,24 @@ export const Retangulo = styled.div`
 }
 
 
-@media (min-width:425px) and (max-width: 768px){
+@media (min-width:426px) and (max-width: 768px){
     height: 7rem;
     justify-content: space-between;
+}
+
+@media (min-width:376px) and (max-width: 425px){
+    height: 35%;
+    justify-content: end;
+    align-items: center;
+    position: static;
+    flex-direction: column;
 }
 `;
 
 export const DivTextLine = styled.div`
     display: flex;
     height: 4rem;
-    width: 33vw;
+    width: 90vw;
     justify-content: space-between;
     margin-left: 12.5rem;
     img {
@@ -70,7 +78,7 @@ export const DivTextLine = styled.div`
             }
     }
 
-    @media (min-width:425px) and (max-width: 768px){
+    @media (min-width:426px) and (max-width: 768px){
         height: 100%;
         margin-left: 1rem;
             img {
@@ -78,6 +86,16 @@ export const DivTextLine = styled.div`
                 width: 0.2rem;
                 margin-left: 2rem;
                 align-self: center;
+            }
+    }
+    @media (min-width:376px) and (max-width: 425px){
+        height: 33%;
+        width: 100%;
+        order: 3;
+        margin-left: 0px;
+        padding: 1px 10px 1px 10px;
+            img {
+                display: none;
             }
     }
 `;
@@ -103,9 +121,17 @@ export const Text = styled.p`
         margin-top: 1.8rem;
         }
 
-    @media (min-width:425px) and (max-width: 768px){
+    @media (min-width:426px) and (max-width: 768px){
         font-size: 0.65rem;
         margin-top: 1.8rem;
+        }
+    @media (min-width:376px) and (max-width: 425px){
+        @media (height: 720px){
+            font-size: 1rem;
+        }
+        margin-top: 0px;
+        font-size: 1.2rem;
+        text-align: center;
         }
 `;
 
@@ -130,10 +156,23 @@ export const DivText2Timer = styled.div`
         height: 100%;
     }
 
-    @media (min-width:425px) and (max-width: 768px){
+    @media (min-width:426px) and (max-width: 768px){
         margin-left: -4rem;
         height: 100%;
         width: 11rem;
+    }
+
+    @media (min-width:376px) and (max-width: 425px){
+        height: 33%;
+        width: 100%;
+        order: 2;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-bottom: 10px;
+        border: 0.2px solid #FFFFFF;
     }
 `;
 
@@ -159,9 +198,11 @@ export const Text2 = styled.p`
         margin-top: 1.3rem;
         }
 
-    @media (min-width:425px) and (max-width: 768px){
-        font-size:  0.8rem;
-        margin: auto 0;
+    @media (min-width:376px) and (max-width: 425px){
+        font-size:  1.5rem;
+        margin-top: 0px;
+        margin-right: 40px;
+        width: 7rem;
         }
 `;
 
@@ -215,9 +256,10 @@ export const DivTimer = styled.div`
             font-size: 1rem;
             margin-bottom: 1.6rem;
         }
+
     }
 
-    @media (min-width:425px) and (max-width: 768px){
+    @media (min-width:426px) and (max-width: 768px){
         height: 100%;
         width: 7rem;
         justify-content: end; 
@@ -231,15 +273,37 @@ export const DivTimer = styled.div`
             margin-bottom: 2rem;
         }
     }
+
+
+    @media (min-width:376px) and (max-width: 425px){
+        width: 7rem;
+        justify-content: end; 
+        margin-left: 1px;
+        h2 {
+            font-size: 2rem;  
+        }
+        h3 {
+        font-size: 1.5rem;
+        margin-top: 5px;
+        }
+        }
 `;
 export const DivNavegLogout = styled.div`
     display: flex;
     width: 14vw;
     flex-direction: row;
 
-    @media (min-width:425px) and (max-width: 768px){
+    @media (min-width:426px) and (max-width: 768px){
         width: 14rem;
         } 
+
+    @media (min-width:376px) and (max-width: 425px){
+        width: 100%;
+        order: 1;
+        height: 33%;
+        justify-content: center;
+
+    }
 `;
 export const DivNavegacao = styled.div`
     display: flex;
@@ -276,13 +340,22 @@ export const DivNavegacao = styled.div`
         }
     }
 
-    @media (min-width:425px) and (max-width: 768px){
+    @media (min-width:426px) and (max-width: 768px){
         width: 7rem;
         height: 100%;
         p{
             font-size: 1rem;
         }
-        }  
+    }
+    
+    @media (min-width:376px) and (max-width: 425px){
+        width: 50%;
+        justify-content: center;
+        p {
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+    }
 `;
 
 export const TextLogout = styled.div`
@@ -317,13 +390,22 @@ export const TextLogout = styled.div`
             font-size: 0.9rem;
         }
         }
-    @media (min-width:425px) and (max-width: 768px){
+    @media (min-width:426px) and (max-width: 768px){
         width: 7rem;
         height: 100%;
         p{
             font-size: 1.3rem;
         }
-         } 
+        }
+    @media (min-width:376px) and (max-width: 425px){
+         width: 50%;
+         justify-content: center;
+        p {
+            font-size: 2.2rem;
+            font-weight: 500;
+        }
+        }
+
     
 `;
 

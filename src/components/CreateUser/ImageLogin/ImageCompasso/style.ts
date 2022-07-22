@@ -32,10 +32,17 @@ img {
         right: 25%;
     }
 
-@media (min-width:425px) and (max-width: 768px){
+@media (min-width:426px) and (max-width: 768px){
     width: 17rem;
     height: 3.8rem;
     top: 3.8rem;
+    left: 50%;
+    }
+
+@media (min-width:376px) and (max-width: 425px){
+    width: 15rem;
+    height: 3rem;
+    top: 2rem;
     left: 50%;
     }
 `;

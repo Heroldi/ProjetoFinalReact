@@ -22,8 +22,13 @@ export const Localizacao= styled.h2`
         margin-top: 30px;
      }
 
-     @media (min-width:425px) and (max-width: 768px){
+     @media (min-width:426px) and (max-width: 768px){
         font-size: 1rem;
         margin-top: 10px;
     } 
+
+    @media (min-width:376px) and (max-width: 425px){
+        font-size: 1.3rem;
+        margin-top: 0px;
+    }
 `;

@@ -40,7 +40,7 @@ img {
     }
 }
 
-@media (min-width:425px) and (max-width: 768px){
+@media (min-width:426px) and (max-width: 768px){
     height: 3rem;
     width: 11rem;
     top: 20px;
@@ -49,4 +49,17 @@ img {
         width: 100%;
     }
 }
+
+@media (min-width:376px) and (max-width: 425px){
+
+    height: 4rem;
+    width: 15rem;
+    top: 10%;
+    left: 20%;
+
+    @media (height: 720px){
+        display: none;
+    }
+
+    }
 `;

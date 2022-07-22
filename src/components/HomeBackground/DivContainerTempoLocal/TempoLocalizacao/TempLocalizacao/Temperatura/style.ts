@@ -22,8 +22,13 @@ export const Temperatura= styled.h1`
         margin-top: 5px;
     }
 
-    @media (min-width:425px) and (max-width: 768px){
+    @media (min-width:426px) and (max-width: 768px){
         font-size: 2rem;
         margin-top: 5px;
     } 
+
+    @media (min-width:376px) and (max-width: 425px){
+        font-size: 2.5rem;
+        margin-top: 0px;
+    }
 `;

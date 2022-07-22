@@ -38,7 +38,7 @@ img{
         width: 1.8rem;
         }
     }
-@media (min-width:425px) and (max-width: 768px){
+@media (min-width:426px) and (max-width: 768px){
     margin-right: -40px;
     margin-top: 5px;
     img{
@@ -48,4 +48,16 @@ img{
         z-indes: 1;
         }
     } 
+
+@media (min-width:376px) and (max-width: 425px){
+     margin-right: 5px;
+     margin-top: 5px;
+     img{
+        right: 65px;
+        top: 30px;
+        width: 2.2rem;
+        z-indes: 1;
+        }
+       
+    }
 `;
