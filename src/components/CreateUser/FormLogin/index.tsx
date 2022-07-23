@@ -1,11 +1,16 @@
 import React from "react";
 import { SectionForm } from './style';
-import FormContainer from "./FormContainer";
+import FormContainerFC from "./FormContainer";
 
 
 
-const section: React.FC = () => 
+const FormLoginFC: React.FC = () => {
+
+    return(
     <SectionForm>
-       <FormContainer/>
-    </SectionForm>
-export default section;
+        <FormContainerFC />
+     </SectionForm>
+     )
+}
+    
+export default FormLoginFC;

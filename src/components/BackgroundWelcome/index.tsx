@@ -1,7 +1,8 @@
 import React from "react";
 import { SectionWelcome } from './style'
 import FormLoginFC from "./FormLogin";
-import ImagemFundo from './ImageLogin';
+import LogoCompasso from "./ImageCompasso";
+import ImgFundoFC from "./ImageLogin";
 
 const BackgroundWelcome: React.FC = () => {
 
@@ -39,7 +40,8 @@ const BackgroundWelcome: React.FC = () => {
    return(
     <SectionWelcome>
         <FormLoginFC /> 
-        <ImagemFundo/>
+        <LogoCompasso />
+        <ImgFundoFC />
     </SectionWelcome>
    ) 
 }

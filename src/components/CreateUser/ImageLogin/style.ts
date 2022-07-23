@@ -11,23 +11,19 @@ img {
 }
 
 @media (min-width:426px) and (max-width: 768px){
-    width: 100vw;
-    position:fixed;
+    display: none
 }
 
 @media (min-width:376px) and (max-width: 425px){
-    width: 100vw;
-    position:fixed;
+    display: none
 }
 
 @media (min-width:321px) and (max-width: 375px){
-    width: 100vw;
-    position:fixed;
+    display: none
 }
 
 @media (width: 320px){
-    width: 100vw;
-    position:fixed;
+    display: none
 }
 
 `;

@@ -1,19 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { IconUser } from './style';
-import  Icon  from '../../../../../../../assets/img/icon-user.png'
+import  Icon  from '../../../../../../assets/img/icon-user.png'
 
 interface propsEmailIcon {
     styleEmail: boolean;
-    styleAltura: boolean;
  }
 
-
-const ImgUser: React.FC<propsEmailIcon> = ({styleEmail, styleAltura}) => {
+const IconUserFC: React.FC<propsEmailIcon> = ({styleEmail}) => {
 
     const[leftInical, setLeftInicial] = useState("");
     const[leftFinal, setLeftFinal] = useState("");
-    const[topInicial, setTopInicial] = useState("");
-    const[topFinal, setTopFinal] = useState("");
 
     function PegaAltura(){
         let largura = window.screen.width;
@@ -24,35 +20,24 @@ const ImgUser: React.FC<propsEmailIcon> = ({styleEmail, styleAltura}) => {
         }else if(largura <= 1440 && largura >= 1025){
             setLeftInicial(`${95}%`)
             setLeftFinal(`${78}%`)
-            setTopInicial(`${4.2}%`)
-            setTopFinal(`${2.9}%`)
         }else if(largura <= 1024 && largura >= 769){
             setLeftInicial(`${95}%`)
             setLeftFinal(`${78}%`)
-            setTopInicial(`${4.2}%`)
-            setTopFinal(`${3.2}%`)
         }else if(largura <= 768 && largura >= 426){
             setLeftInicial(`${93}%`)
             setLeftFinal(`${78}%`)
-            setTopInicial(`${4.1}%`)
-            setTopFinal(`${3.2}%`)
         }else if(largura <= 425 && largura >= 376){
             setLeftInicial(`${91}%`)
-            setLeftFinal(`${75}%`)
-            setTopInicial(`${4.7}%`)
-            setTopFinal(`${3.2}%`)
+            setLeftFinal(`${77}%`)
         }else if(largura <= 375 && largura >= 321){
-            setLeftInicial(`${91}%`)
-            setLeftFinal(`${75}%`)
-            setTopInicial(`${4.7}%`)
-            setTopFinal(`${3.2}%`)
+            setLeftInicial(`${92}%`)
+            setLeftFinal(`${77}%`)
         }else if(largura <= 320 && largura >= 0){
             setLeftInicial(`${92}%`)
             setLeftFinal(`${75}%`)
-            setTopInicial(`${4.5}%`)
-            setTopFinal(`${3.2}%`)
         }
     }
+
 
     useEffect( () =>{
         PegaAltura();
@@ -60,11 +45,10 @@ const ImgUser: React.FC<propsEmailIcon> = ({styleEmail, styleAltura}) => {
     
 
     return(
-        <IconUser style={{left: styleEmail ? leftFinal: leftInical, top: styleAltura ? topFinal : topInicial}}>
+        <IconUser style={{left: styleEmail ? leftFinal: leftInical}}>
             <img src={Icon} />
         </IconUser>
     )
 }
 
-
-export default ImgUser;
+export default IconUserFC;

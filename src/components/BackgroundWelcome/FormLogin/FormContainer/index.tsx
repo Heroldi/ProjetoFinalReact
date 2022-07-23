@@ -1,8 +1,8 @@
 import React from "react";
 import { FormContainer } from './style';
-import DivInputIconFC from "./DivInputIcon";
 import TituloFC from "./Title";
 import LoginTitleFC from "./LoginTitle";
+import InputFormFC from "./InputForm";
 
 
 const FormContainerFC: React.FC = () => {
@@ -11,7 +11,7 @@ const FormContainerFC: React.FC = () => {
         <FormContainer>
             <TituloFC />
             <LoginTitleFC />
-            <DivInputIconFC />
+            <InputFormFC />
         </FormContainer>
     )
 }

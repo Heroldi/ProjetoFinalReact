@@ -29,6 +29,7 @@ export const FormInput = styled.form `
       display: flex;
       flex-direction: column;
       align-items: center;
+
   }
 `;
 
@@ -143,7 +144,7 @@ export const InputForm = styled.input`
       height: 2.5rem;
         width: 85%;
         border-radius: 2rem;
-        margin-bottom: 2rem; 
+        margin-bottom: 1rem; 
         border: 1px solid #FFFFFF;
         padding: 1.3rem;
         font-size: 1.2rem;
@@ -154,6 +155,11 @@ export const InputForm = styled.input`
           font-size: 1.2rem;
         }
   }
+`;
+
+export const Requisito = styled.p`
+font-size: 18px;
+color: white;
 `;
 
 export const CadastroLogin = styled.p `
@@ -200,8 +206,8 @@ export const CadastroLogin = styled.p `
 
 `;
 
-export const CadastreSe = styled.a `
-  color: #C12D18;
+export const LogarSe = styled.a `
+color: #C12D18;
   font-weight: 700;
   font-size: 0.8rem;
   text-align: left;
@@ -253,50 +259,6 @@ export const CadastreSe = styled.a `
     margin-top: 0.2rem;
     margin-left: 0.6rem;
   }
-`;
-
-export const ErroLogin = styled.p `
-  color: #E9B425;
-  font-weight: 700;
-  font-size: 1rem;
-  text-align: center;
-  margin-top: 3vh;
-
-  @media (min-width:1441px) and (max-width: 2560px){
-    font-size: 1.5rem;
-    margin-top: 1rem;
-  }
-
-  @media (min-width:1025px) and (max-width: 1440px){
-    font-size: 1rem;
-    margin-top: 1rem;
-  }
-
-  @media (min-width:769px) and (max-width: 1024px){
-    font-size: 1rem;
-    margin-top: 0.8rem;
-  }
-
-  @media (min-width:426px) and (max-width: 768px){
-    font-size: 1.1rem;
-    margin-top: 0.8rem;
-  }
-
-  @media (min-width:376px) and (max-width: 425px){
-    font-size: 1.1rem;
-    margin-top: 0.5rem;
-  }
-
-  @media (min-width:321px) and (max-width: 375px){
-    font-size: 1.1rem;
-    margin-top: 0.5rem;
-  }
-
-  @media (width: 320px){
-    font-size: 1rem;
-    margin-top: 0.5rem;
-  }
-  
 `;
 
 export const Button = styled.input `

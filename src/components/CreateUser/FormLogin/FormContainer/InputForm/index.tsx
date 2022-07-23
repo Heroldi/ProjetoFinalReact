@@ -1,37 +1,36 @@
 import React, {useState, useEffect} from "react";
 import { Button } from "./style";
 import { InputForm } from './style';
-import { ErroLogin } from './style';
 import { CadastroLogin } from './style';
 import { LogarSe } from './style'
 import { FormInput } from "./style";
+import { DivInputIcon } from "./DivInputIcon/style";
+import { Requisito } from "./style";
 import ImgUser from "./IconUser";
 import ImgSenha from "./IconPassword";
 
 
 
 
+
 const Input: React.FC = () => {
 
-  const [erroEmail, setErroEmail] = useState(false);
-  const [erroSenha, setErroSenha] = useState(false);
+  const [reqMaiusculo, setReqMaiusculo] = useState(false);
+  const [reqMinusculo, setReqMinusculo] = useState(false);
+  const [reqNumero, setReqNumero] = useState(false);
+  const [req6Digitos, setReq6Digitos] = useState(false);
   const [styleInputEmail, setStyleInputEmail] = useState(false);
   const [styleInputSenha, setStyleInputSenha] = useState(false);
-  const [erroSubirIcons, setErroSubirIcons] = useState(false);
   const [typeSenha, setTypeSenha] = useState(false);
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
   const handleChangeEmail = () => {
     setStyleInputEmail(false);
-    setErroEmail(false);
-    setErroSubirIcons(false);  
   }
 
   const handleChangeSenha = () => {
     setStyleInputSenha(false);
-    setErroSenha(false);
-    setErroSubirIcons(false);  
   }
 
 
@@ -41,33 +40,19 @@ const Input: React.FC = () => {
         let senhaFiltro = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
         if(email ==='' && senha === ''){
-          setErroEmail(true);
           setStyleInputEmail(true);
-          setErroSenha(true);
           setStyleInputSenha(true);
-          setErroSubirIcons(true);  
         }else if(email === ''){ 
-          setErroEmail(true);
           setStyleInputEmail(true);
-          setErroSubirIcons(true);  
         }else if(senha === ''){
-          setErroSenha(true);
           setStyleInputSenha(true);
-          setErroSubirIcons(true);  
         }else if (!emailFiltro.test(email) && !senhaFiltro.test(senha)) {
-          setErroEmail(true);
           setStyleInputEmail(true);
-          setErroSenha(true);
           setStyleInputSenha(true);
-          setErroSubirIcons(true);  
         }else if(!emailFiltro.test(email)){
-          setErroEmail(true);
           setStyleInputEmail(true);
-          setErroSubirIcons(true);  
         }else if(!senhaFiltro.test(senha)){
-          setErroSenha(true);
           setStyleInputSenha(true);
-          setErroSubirIcons(true);  
         }else{     
         
           try{
@@ -104,10 +89,6 @@ const Input: React.FC = () => {
       return email ? true : false
       }
 
-  function subirIcon(){
-    return erroSubirIcons ? true : false;
-  }
-
     useEffect( () =>{
       mudaIconSenha();
     },[senha])
@@ -115,12 +96,7 @@ const Input: React.FC = () => {
     useEffect( () =>{
       mudaIconEmail();
     },[email])
-
-    useEffect( () =>{
-      subirIcon();
-    },[erroSubirIcons, styleInputEmail, styleInputSenha])
-
-    
+ 
     function OnChangeEmail(event: any){
       setEmail(event.target.value);
       handleChangeEmail();
@@ -135,12 +111,18 @@ const Input: React.FC = () => {
     return(
         <>
             <FormInput  onSubmit={handleSubmit}>
-                <InputForm autoComplete="off" style={{border: styleInputEmail ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Email" name="email" value={email} onChange={OnChangeEmail}/>
-                <ImgUser styleEmail={mudaIconEmail()} styleAltura={subirIcon()}/>
-                <InputForm autoComplete="off" style={{border: styleInputSenha ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Senha" name="senha" value={senha} onChange={OnChangeSenha}/>
-                <ImgSenha styleSenha={mudaIconSenha()} styleAltura={subirIcon()}/>  
-                {erroEmail && <ErroLogin>Ops, o campo email não atende aos requisitos</ErroLogin> }
-                {erroSenha && <ErroLogin>Ops, o campo senha não atende aos requisitos</ErroLogin>}
+                <DivInputIcon>
+                  <InputForm autoComplete="off" style={{border: styleInputEmail ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Email" name="email" value={email} onChange={OnChangeEmail}/>
+                  <ImgUser styleEmail={mudaIconEmail()}/>
+                </DivInputIcon>
+                <DivInputIcon>
+                  <InputForm autoComplete="off" style={{border: styleInputSenha ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Senha" name="senha" value={senha} onChange={OnChangeSenha}/>
+                  <ImgSenha styleSenha={mudaIconSenha()}/>  
+                </DivInputIcon>
+                {req6Digitos && <Requisito>6 Digitos</Requisito>}
+                {reqMaiusculo && <Requisito>Letra Maiuscula</Requisito>}
+                {reqMinusculo && <Requisito>Letra Minuscula</Requisito>}
+                {reqNumero &&<Requisito>Número</Requisito>}
                 <Button type="submit" value="Cadastrar"></Button>
                 <CadastroLogin> Já possui uma conta?<LogarSe href="http://localhost:3000/login">Logar-se</LogarSe></CadastroLogin>
             </FormInput>

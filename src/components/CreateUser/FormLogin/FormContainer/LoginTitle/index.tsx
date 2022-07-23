@@ -1,6 +1,12 @@
 import React from "react";
 import { LoginTitle } from './style';
 
-const loginTitle: React.FC = () => <LoginTitle>Cadastre-se</LoginTitle>;
+const LoginTitleFC: React.FC = () => {
 
-export default loginTitle;
+    return(
+
+        <LoginTitle>Cadastro</LoginTitle>
+    )
+}
+
+export default LoginTitleFC;

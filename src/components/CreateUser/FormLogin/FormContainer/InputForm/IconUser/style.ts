@@ -31,13 +31,15 @@ img {
     }
 
 @media (min-width: 376px) and (max-width: 425px){
-        height: 1.9rem;
-        width: 1.7rem;
+    height: 1.9rem;
+    width: 1.7rem;
+    top: 10%;
     }
 
 @media (min-width:321px) and (max-width: 375px){
     height: 1.6rem;
     width: 1.4rem;
+    top: 11%;
     }
 
 @media (width: 320px){
