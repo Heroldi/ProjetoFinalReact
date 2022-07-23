@@ -15,7 +15,6 @@ const IconSenhaFC: React.FC<propsSenhaIcon> = ({styleSenha}) => {
 
     function PegAltura(){
         let largura = window.screen.width;
-        console.log(largura);
 
         if(largura <= 2560 && largura >= 1441){
             setLeftInicial(`${93}%`)

@@ -6,35 +6,44 @@ import { LogarSe } from './style'
 import { FormInput } from "./style";
 import { DivInputIcon } from "./DivInputIcon/style";
 import { Requisito } from "./style";
+import { ErroLogin } from './style'
 import ImgUser from "./IconUser";
 import ImgSenha from "./IconPassword";
 
 
-
-
-
 const Input: React.FC = () => {
 
-  const [reqMaiusculo, setReqMaiusculo] = useState(false);
-  const [reqMinusculo, setReqMinusculo] = useState(false);
-  const [reqNumero, setReqNumero] = useState(false);
-  const [req6Digitos, setReq6Digitos] = useState(false);
   const [styleInputEmail, setStyleInputEmail] = useState(false);
   const [styleInputSenha, setStyleInputSenha] = useState(false);
   const [typeSenha, setTypeSenha] = useState(false);
+  const [erroLogin, setErroLogin] = useState(false);
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
   const handleChangeEmail = () => {
     setStyleInputEmail(false);
+    setErroLogin(false);
   }
 
   const handleChangeSenha = () => {
     setStyleInputSenha(false);
   }
 
+  function validaMaiusculo(){
+    return /[A-Z]/.test(senha);
+    
+  }
+  function validaMinusculo(){
+    return /[a-z]/.test(senha);
+  }
+  function validaNumeros(){
+    return /[0-9]/.test(senha);
+  }
+  function valida6Digitos(){
+    return /.{6,}/.test(senha);
+  }
 
-      async function SalvarBanco(){
+ async function SalvarBanco(){
 
         let emailFiltro = /^.+@.+\..{2,}$/;
         let senhaFiltro = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
@@ -44,13 +53,16 @@ const Input: React.FC = () => {
           setStyleInputSenha(true);
         }else if(email === ''){ 
           setStyleInputEmail(true);
+          setErroLogin(true);
         }else if(senha === ''){
           setStyleInputSenha(true);
         }else if (!emailFiltro.test(email) && !senhaFiltro.test(senha)) {
           setStyleInputEmail(true);
           setStyleInputSenha(true);
+          setErroLogin(true);
         }else if(!emailFiltro.test(email)){
           setStyleInputEmail(true);
+          setErroLogin(true);
         }else if(!senhaFiltro.test(senha)){
           setStyleInputSenha(true);
         }else{     
@@ -107,7 +119,6 @@ const Input: React.FC = () => {
     handleChangeSenha();
    }
 
-      
     return(
         <>
             <FormInput  onSubmit={handleSubmit}>
@@ -119,10 +130,11 @@ const Input: React.FC = () => {
                   <InputForm autoComplete="off" style={{border: styleInputSenha ? '2px #E9B425 solid': ' 0.7px #FFFFFF solid'}} type="text" placeholder="Senha" name="senha" value={senha} onChange={OnChangeSenha}/>
                   <ImgSenha styleSenha={mudaIconSenha()}/>  
                 </DivInputIcon>
-                {req6Digitos && <Requisito>6 Digitos</Requisito>}
-                {reqMaiusculo && <Requisito>Letra Maiuscula</Requisito>}
-                {reqMinusculo && <Requisito>Letra Minuscula</Requisito>}
-                {reqNumero &&<Requisito>Número</Requisito>}
+                {!valida6Digitos() && <Requisito >6 Digitos</Requisito>}
+                {!validaMaiusculo() && <Requisito>Letra Maiuscula</Requisito>}
+                {!validaMinusculo() && <Requisito>Letra Minuscula</Requisito>}
+                {!validaNumeros() &&<Requisito>Número</Requisito>}
+                {erroLogin && <ErroLogin>Ops, email inválido, tente novamente!</ErroLogin>}      
                 <Button type="submit" value="Cadastrar"></Button>
                 <CadastroLogin> Já possui uma conta?<LogarSe href="http://localhost:3000/login">Logar-se</LogarSe></CadastroLogin>
             </FormInput>
