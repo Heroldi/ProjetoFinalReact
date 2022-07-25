@@ -106,6 +106,11 @@ export const InputForm = styled.input`
         ::placeholder {
           font-size: 1.5rem;
         }
+
+        @media (min-height: 650px) and (max-height: 800px){
+          height: 4rem;
+          width: 90%;
+      } 
     }
 
     @media (min-width:376px) and (max-width: 425px){
@@ -243,11 +248,12 @@ export const Button = styled.input `
   }
 
   @media (min-width:426px) and (max-width: 768px){
-    height: 3rem;
+    height: 4rem;
     width: 90%;
     margin-top: 6vh;
     border-radius: 2rem;
     font-size: 1.3rem;
+
   }
 
   @media (min-width:376px) and (max-width: 425px){
@@ -290,11 +296,17 @@ export const CadastroLogin = styled.p `
   @media (min-width:1025px) and (max-width: 1440px){
     font-size: 1rem;
     margin-top: 4rem;
+    @media (min-height: 650px) and (max-height: 800px){
+      margin-top: 3rem;
+  }
   }
 
   @media (min-width:769px) and (max-width: 1024px){
       font-size: 1rem;
       margin-top: 3rem;
+      @media (min-height: 650px) and (max-height: 800px){
+        margin-top: 2rem;
+    }
   }
 
   @media (min-width:426px) and (max-width: 768px){

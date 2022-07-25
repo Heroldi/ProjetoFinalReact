@@ -118,7 +118,7 @@ export const DivTextLine = styled.div`
     @media (min-width:376px) and (max-width: 425px){
         height: 33%;
         width: 100%;
-        order: 3;
+        order: 1;
         margin-left: 0px;
         padding: 1px 10px 1px 10px;
             img {
@@ -129,7 +129,7 @@ export const DivTextLine = styled.div`
     @media (min-width:321px) and (max-width: 375px){
         height: 33%;
         width: 100%;
-        order: 3;
+        order: 1;
         margin-left: 0px;
         padding: 1px 10px 1px 10px;
             img {
@@ -140,7 +140,7 @@ export const DivTextLine = styled.div`
     @media (width: 320px) {
         height: 33%;
         width: 100%;
-        order: 3;
+        order: 1;
         margin-left: 0px;
         padding: 1px 10px 1px 10px;
             img {
@@ -175,8 +175,8 @@ export const Text = styled.p`
         margin-top: 1.8rem;
         }
     @media (min-width:376px) and (max-width: 425px){
-        @media (height: 720px){
-            font-size: 1rem;
+        @media (min-height: 650px) and (max-height: 800px){
+            font-size: 0.8rem;
         }
         margin-top: 0px;
         font-size: 1.1rem;
@@ -184,8 +184,8 @@ export const Text = styled.p`
         }
 
     @media (min-width:321px) and (max-width: 375px){
-        @media (height: 720px){
-            font-size: 1rem;
+        @media (min-height: 650px) and (max-height: 800px){
+            font-size: 0.8rem;
         }
         margin-top: 0px;
         font-size: 1.2rem;
@@ -193,8 +193,8 @@ export const Text = styled.p`
         }
 
     @media (width: 320px) {
-        @media (height: 720px){
-            font-size: 1rem;
+        @media (min-height: 650px) and (max-height: 800px){
+            font-size: 0.8rem;
         }
         margin-top: 0px;
         font-size: 1rem;
@@ -312,6 +312,9 @@ export const Text2 = styled.p`
         margin-top: 0px;
         margin-right: 40px;
         width: 7rem;
+        @media (min-height: 650px) and (max-height: 800px){
+            font-size: 1rem;
+        }
     }
 
     @media (min-width:321px) and (max-width: 375px){
@@ -319,6 +322,9 @@ export const Text2 = styled.p`
         margin-top: 0px;
         margin-right: 40px;
         width: 7rem;
+        @media (min-height: 650px) and (max-height: 800px){
+            font-size: 1rem;
+        }
     }
 
     @media (width: 320px) {
@@ -326,6 +332,10 @@ export const Text2 = styled.p`
         margin-top: 0px;
         margin-right: 40px;
         width: 7rem;
+
+        @media (min-height: 650px) and (max-height: 800px){
+            font-size: 1rem;
+        }
     }
 `;
 
@@ -408,6 +418,14 @@ export const DivTimer = styled.div`
         font-size: 1.5rem;
         margin-top: 5px;
         }
+        @media (min-height: 650px) and (max-height: 800px){
+            h2 {
+                font-size: 1.5rem;  
+            }
+            h3 {
+                font-size: 1.2rem;
+                }
+        }
         }
 
     @media (min-width:321px) and (max-width: 375px){
@@ -420,6 +438,14 @@ export const DivTimer = styled.div`
         h3 {
         font-size: 1.5rem;
         margin-top: 5px;
+        }
+        @media (min-height: 650px) and (max-height: 800px){
+            h2 {
+                font-size: 1.5rem;  
+            }
+            h3 {
+                font-size: 1.2rem;
+                }
         }
         }
 
@@ -434,6 +460,15 @@ export const DivTimer = styled.div`
         font-size: 1.3rem;
         margin-top: 5px;
         }
+
+        @media (min-height: 650px) and (max-height: 800px){
+            h2 {
+                font-size: 1.5rem;  
+            }
+            h3 {
+                font-size: 1.2rem;
+                }
+        }
         }
 `;
 export const DivNavegLogout = styled.div`
@@ -447,7 +482,7 @@ export const DivNavegLogout = styled.div`
 
     @media (min-width:376px) and (max-width: 425px){
         width: 100%;
-        order: 1;
+        order: 3;
         height: 33%;
         justify-content: center;
 
@@ -455,16 +490,16 @@ export const DivNavegLogout = styled.div`
 
     @media (min-width:321px) and (max-width: 375px){
         width: 100%;
-        order: 1;
+        order: 3;
         height: 33%;
         justify-content: center;
     }
 
     @media (width: 320px) {
         width: 100%;
-        order: 1;
+        order: 3;
         height: 33%;
-        justify-content: center;
+        justify-content: center;      
     }
 `;
 export const DivNavegacao = styled.div`
@@ -517,6 +552,11 @@ export const DivNavegacao = styled.div`
             font-size: 1.8rem;
             font-weight: 500;
         }
+        @media (min-height: 650px) and (max-height: 800px){
+            p {
+                font-size: 1.4rem;
+            }
+        }
     }
 
     @media (min-width:321px) and (max-width: 375px){
@@ -526,14 +566,25 @@ export const DivNavegacao = styled.div`
             font-size: 1.6rem;
             font-weight: 500;
         }
+        @media (min-height: 650px) and (max-height: 800px){
+            p {
+                font-size: 1.2rem;
+            }
+        }
     }
 
-    @media (width: 320px) {
+    @media (max-width: 320px) {
         width: 50%;
         justify-content: center;
         p {
             font-size: 1.3rem;
             font-weight: 500;
+        }
+
+        @media (min-height: 650px) and (max-height: 800px){
+            p {
+                font-size: 1rem;
+            }
         }
     }
 `;
@@ -585,6 +636,12 @@ export const TextLogout = styled.div`
             font-size: 2.2rem;
             font-weight: 500;
         }
+
+        @media (min-height: 650px) and (max-height: 800px){
+            p {
+                font-size: 1.7rem;
+            }
+        }
         }
 
     @media (min-width:321px) and (max-width: 375px){
@@ -593,6 +650,11 @@ export const TextLogout = styled.div`
         p {
             font-size: 2rem;
             font-weight: 500;
+        }
+        @media (min-height: 650px) and (max-height: 800px){
+            p {
+                font-size: 1.5rem;
+            }
         }
     }
 
@@ -603,6 +665,11 @@ export const TextLogout = styled.div`
            font-size: 1.5rem;
            font-weight: 500;
        }
+       @media (min-height: 650px) and (max-height: 800px){
+        p {
+            font-size: 1.2rem;
+        }
+    }
     }
 
     

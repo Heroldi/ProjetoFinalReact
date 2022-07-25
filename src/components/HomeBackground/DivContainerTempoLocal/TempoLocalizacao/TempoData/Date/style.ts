@@ -24,15 +24,24 @@ export const Data= styled.h2`
     @media (min-width:376px) and (max-width: 425px){
         font-size: 1rem;
         margin-left: 5px;
+        @media (min-height: 650px) and (max-height: 800px){
+            font-size: 0.7rem;
+        }
     }
 
     @media (min-width:320px) and (max-width: 375px){
         font-size: 1rem;
         margin-left: 5px;
+        @media (min-height: 650px) and (max-height: 800px){
+            font-size: 0.7rem;
+        }
     }
 
     @media (width:320px){
         font-size: 0.7rem;
         margin-left: 5px;
+        @media (min-height: 650px) and (max-height: 800px){
+            font-size: 0.5rem;
+        }
     }
 `;

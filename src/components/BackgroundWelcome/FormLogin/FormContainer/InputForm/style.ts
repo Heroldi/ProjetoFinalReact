@@ -106,6 +106,11 @@ export const InputForm = styled.input`
         ::placeholder {
           font-size: 1.5rem;
         }
+
+        @media (min-height: 650px) and (max-height: 800px){
+          height: 4rem;
+          width: 90%;
+      } 
     }
 
     @media (min-width:376px) and (max-width: 425px){
@@ -201,6 +206,76 @@ export const ErroLogin = styled.p `
   
 `;
 
+export const Button = styled.input `
+  background: #FF2D04;
+  height: 3rem;
+  width: 20rem;
+  margin-top: 6vh;
+  border-radius: 50px;
+  border: none;
+  font-weight: 700;
+  color: #FFFFFF;
+  font-size: 1rem;
+  cursor: pointer;
+
+  @media (min-width:1441px) and (max-width: 2560px){
+    height: 4rem;
+    width: 100%;
+    margin-top: 6vh;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+  }
+
+  @media (min-width:1025px) and (max-width: 1440px){
+    height: 3rem;
+    width: 100%;
+    margin-top: 6vh;
+    border-radius: 2rem;
+    font-size: 1.3rem;
+  }
+
+  @media (min-width:769px) and (max-width: 1024px){
+    height: 3rem;
+    width: 100%;
+    margin-top: 6vh;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+  }
+
+  @media (min-width:426px) and (max-width: 768px){
+    height: 4rem;
+    width: 90%;
+    margin-top: 6vh;
+    border-radius: 2rem;
+    font-size: 1.3rem;
+
+  }
+
+  @media (min-width:376px) and (max-width: 425px){
+    height: 3rem;
+    width: 85%;
+    margin-top: 4vh;
+    border-radius: 2rem;
+    font-size: 1.3rem;
+  }
+
+  @media (min-width:321px) and (max-width: 375px){
+    height: 3rem;
+    width: 85%;
+    margin-top: 4vh;
+    border-radius: 2rem;
+    font-size: 1.3rem;
+  }
+
+  @media (width: 320px){
+    height: 2.5rem;
+    width: 85%;
+    margin-top: 4vh;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+  }
+`;
+
 export const CadastroLogin = styled.p `
   color: white;
   font-weight: 700;
@@ -216,11 +291,17 @@ export const CadastroLogin = styled.p `
   @media (min-width:1025px) and (max-width: 1440px){
     font-size: 1rem;
     margin-top: 4rem;
+    @media (min-height: 650px) and (max-height: 800px){
+      margin-top: 3rem;
+  }
   }
 
   @media (min-width:769px) and (max-width: 1024px){
       font-size: 1rem;
       margin-top: 3rem;
+      @media (min-height: 650px) and (max-height: 800px){
+        margin-top: 2rem;
+    }
   }
 
   @media (min-width:426px) and (max-width: 768px){
@@ -300,71 +381,3 @@ export const CadastreSe = styled.a `
   }
 `;
 
-export const Button = styled.input `
-  background: #FF2D04;
-  height: 3rem;
-  width: 20rem;
-  margin-top: 6vh;
-  border-radius: 50px;
-  border: none;
-  font-weight: 700;
-  color: #FFFFFF;
-  font-size: 1rem;
-  cursor: pointer;
-
-  @media (min-width:1441px) and (max-width: 2560px){
-    height: 4rem;
-    width: 100%;
-    margin-top: 6vh;
-    border-radius: 4rem;
-    font-size: 1.6rem;
-  }
-
-  @media (min-width:1025px) and (max-width: 1440px){
-    height: 3rem;
-    width: 100%;
-    margin-top: 6vh;
-    border-radius: 2rem;
-    font-size: 1.3rem;
-  }
-
-  @media (min-width:769px) and (max-width: 1024px){
-    height: 3rem;
-    width: 100%;
-    margin-top: 6vh;
-    border-radius: 2rem;
-    font-size: 1.2rem;
-  }
-
-  @media (min-width:426px) and (max-width: 768px){
-    height: 3rem;
-    width: 90%;
-    margin-top: 6vh;
-    border-radius: 2rem;
-    font-size: 1.3rem;
-  }
-
-  @media (min-width:376px) and (max-width: 425px){
-    height: 3rem;
-    width: 85%;
-    margin-top: 4vh;
-    border-radius: 2rem;
-    font-size: 1.3rem;
-  }
-
-  @media (min-width:321px) and (max-width: 375px){
-    height: 3rem;
-    width: 85%;
-    margin-top: 4vh;
-    border-radius: 2rem;
-    font-size: 1.3rem;
-  }
-
-  @media (width: 320px){
-    height: 2.5rem;
-    width: 85%;
-    margin-top: 4vh;
-    border-radius: 2rem;
-    font-size: 1.1rem;
-  }
-`;

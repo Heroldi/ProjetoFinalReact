@@ -30,15 +30,24 @@ export const Temperatura= styled.h1`
     @media (min-width:376px) and (max-width: 425px){
         font-size: 2.5rem;
         margin-top: 0px;
+        @media (min-height: 650px) and (max-height: 800px){
+            font-size: 1.6rem;
+        }
     }
 
     @media (min-width:320px) and (max-width: 375px){
         font-size: 2.5rem;
         margin-top: 0px;
+        @media (min-height: 650px) and (max-height: 800px){
+            font-size: 1.6rem;
+        }
     }
 
     @media (width:320px){
         font-size: 2.1rem;
         margin-top: 0px;
+        @media (min-height: 650px) and (max-height: 800px){
+            font-size: 1.3rem;
+        }
     }
 `;

@@ -15,7 +15,6 @@ const Input: React.FC = () => {
 
   const [styleInputEmail, setStyleInputEmail] = useState(false);
   const [styleInputSenha, setStyleInputSenha] = useState(false);
-  const [typeSenha, setTypeSenha] = useState(false);
   const [erroLogin, setErroLogin] = useState(false);
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
